@@ -1,0 +1,19 @@
+package main.java.game;
+
+public abstract class Character {
+  private Weapon weapon;
+  private int life; 
+  
+  public Character(int life){
+    this.weapon = new Fist();
+    this.life = life;
+  }
+  
+  public Weapon getWeapon(){
+    return weapon;
+  }
+
+  public  int getLife(){
+    return this.life;
+  }
+}
