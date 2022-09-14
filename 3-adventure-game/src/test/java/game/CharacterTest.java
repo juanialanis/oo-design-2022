@@ -62,4 +62,32 @@ public class CharacterTest {
     assertEquals(character.newInstance().getLife(), life);
   }
 
+  static Stream<Arguments> characterDamageGenerator() {
+    return Stream.of(
+      Arguments.of(Knight.class, 15),
+      Arguments.of(Wizard.class, 12),
+      Arguments.of(Knight.class, 15),
+      Arguments.of(Wizard.class, 12),
+      Arguments.of(Knight.class, 151),
+      Arguments.of(Wizard.class, 120)
+    );
+  }
+
+  @ParameterizedTest
+  @MethodSource("characterDamageGenerator")
+  public void sufferDamageTest(Class<Character> characterClass, int damage) throws InstantiationException, IllegalAccessException {
+    Character character = characterClass.newInstance();
+    int curLife = character.getLife();
+    character.sufferDamage(damage);
+    assertEquals(character.getLife(), curLife - damage);
+  }
+
+  @ParameterizedTest
+  @MethodSource("characterDamageGenerator")
+  public void isAliveTest(Class<Character> characterClass, int damage) throws InstantiationException, IllegalAccessException {
+    Character character = characterClass.newInstance();
+    character.sufferDamage(damage);
+    assertEquals(character.isAlive(), character.getLife() > 0);
+  }
+
 }

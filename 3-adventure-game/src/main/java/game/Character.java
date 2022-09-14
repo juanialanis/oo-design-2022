@@ -13,7 +13,16 @@ public abstract class Character {
     return weapon;
   }
 
-  public  int getLife(){
+  public int getLife(){
     return this.life;
   }
+
+  public void sufferDamage(int damage) {
+    this.life = this.life - damage;
+  }
+
+  public boolean isAlive() {
+    return this.life > 0;
+  }
+
 }
