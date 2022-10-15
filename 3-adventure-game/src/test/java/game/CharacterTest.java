@@ -1,11 +1,11 @@
-package test.java.game;
+package game;
 
 
-import main.java.game.Knight;
-import main.java.game.Wizard;
-import main.java.game.Fist;
-import main.java.game.Weapon;
-import main.java.game.Character;
+import game.Knight;
+import game.Wizard;
+import game.Fist;
+import game.Weapon;
+import game.Character;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.MethodSource;

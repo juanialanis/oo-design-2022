@@ -1,4 +1,4 @@
-package main.java.game;
+package game;
 
 public abstract class Character {
   private Weapon weapon;

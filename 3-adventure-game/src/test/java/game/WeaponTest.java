@@ -1,7 +1,7 @@
-package test.java.game;
+package game;
 
-import main.java.game.Weapon;
-import main.java.game.Fist;
+import game.Weapon;
+import game.Fist;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.MethodSource;
