@@ -26,7 +26,7 @@ public class BoundedQueue
 	public int size() {
 		return size;
 	}
-	
+
 	public void enQueue (Object o)
 			throws NullPointerException, IllegalStateException
 	{  // Modifies: this
