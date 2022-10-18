@@ -1,8 +1,7 @@
 package adapter.ducks;
 
-import headfirst.designpatterns.adapter.ducks.challenge.Drone;
-import headfirst.designpatterns.adapter.ducks.challenge.DroneAdapter;
-import headfirst.designpatterns.adapter.ducks.challenge.SuperDrone;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DuckTestDrive {
 	public static void main(String[] args) {
@@ -23,8 +22,11 @@ public class DuckTestDrive {
 		
 		// Challenge
 		Drone drone = new SuperDrone();
-		Duck droneAdapter = new DroneAdapter(drone);
-		testDuck(droneAdapter);
+    Duck droneAdapter = new DroneAdapter(drone);
+		DucksAdapter ducks = new DucksAdapter();
+    ducks.add(droneAdapter);
+    ducks.add(turkeyAdapter);
+		testDuck(ducks);
 	}
 
 	static void testDuck(Duck duck) {
