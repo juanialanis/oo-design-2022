@@ -1,17 +1,9 @@
 package game;
 
-import game.Knight;
-import game.Fight;
-import game.Wizard;
-import game.Fist;
-import game.Weapon;
-import game.Character;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -49,4 +41,22 @@ public class FightTest {
         fight.fight();
         assertFalse(char2.isAlive());
     }
+
+    static Stream<Arguments> attackGeneratorWithWeaponChange() {
+      return Stream.of(
+          Arguments.of(new Knight(), new Wizard(),Wand.class)
+      );
+  }
+
+    @ParameterizedTest
+    @MethodSource("attackGeneratorWithWeaponChange")
+    public void attackWithDifferentWeapons(Character char1, Character char2, Class<Weapon> weaponClass) throws InstantiationException, IllegalAccessException{
+      Weapon w = weaponClass.newInstance();
+      char2.setWeapon(w);
+      Fight fight = new Fight(char1, char2);
+      int previousLife = char1.getLife();
+      fight.attack(char2, char1);
+      assertEquals(previousLife - w.getDamage(), char1.getLife());
+    }
+
 }

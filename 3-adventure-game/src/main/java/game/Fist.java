@@ -1,11 +1,9 @@
 package game;
 
-public class Fist implements Weapon{
-  
-  public static final int damage = 10;
+public class Fist extends Weapon{
 
-  public int getDamage(){
-    return this.damage;
+  public Fist(){
+    super(10);
   }
 
 }

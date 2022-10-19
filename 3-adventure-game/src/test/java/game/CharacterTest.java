@@ -1,11 +1,5 @@
 package game;
 
-
-import game.Knight;
-import game.Wizard;
-import game.Fist;
-import game.Weapon;
-import game.Character;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,7 +16,8 @@ public class CharacterTest {
   @ParameterizedTest
   @ValueSource (classes = {
     Knight.class,
-    Wizard.class
+    Wizard.class,
+    Elf.class
   })
   public void constructorTest(Class<Character> characterClass) throws InstantiationException, IllegalAccessException {
     Character character = characterClass.newInstance();
@@ -32,7 +27,8 @@ public class CharacterTest {
   @ParameterizedTest
   @ValueSource (classes = {
     Knight.class,
-    Wizard.class
+    Wizard.class,
+    Elf.class
   })
   public void defaultWeaponFistTest(Class<Character> characterClass) throws InstantiationException, IllegalAccessException {
     Character character = characterClass.newInstance();
@@ -42,7 +38,8 @@ public class CharacterTest {
   @ParameterizedTest
   @ValueSource (classes = {
     Knight.class,
-    Wizard.class
+    Wizard.class,
+    Elf.class
   })
   public void defaultWeaponNotNullTest(Class<Character> characterClass) throws InstantiationException, IllegalAccessException {
     Character character = characterClass.newInstance();
@@ -52,7 +49,8 @@ public class CharacterTest {
   static Stream<Arguments> characterLifeGenerator() {
     return Stream.of(
       Arguments.of(Knight.class, 150),
-      Arguments.of(Wizard.class, 100)
+      Arguments.of(Wizard.class, 100),
+      Arguments.of(Elf.class, 200)
     );
   }
   
@@ -69,7 +67,9 @@ public class CharacterTest {
       Arguments.of(Knight.class, 15),
       Arguments.of(Wizard.class, 12),
       Arguments.of(Knight.class, 151),
-      Arguments.of(Wizard.class, 120)
+      Arguments.of(Wizard.class, 120),
+      Arguments.of(Elf.class, 50),
+      Arguments.of(Elf.class, 202)
     );
   }
 
@@ -88,6 +88,26 @@ public class CharacterTest {
     Character character = characterClass.newInstance();
     character.sufferDamage(damage);
     assertEquals(character.isAlive(), character.getLife() > 0);
+  }
+
+  static Stream<Arguments> characterChangeWeaponGenerator() {
+    return Stream.of(
+      Arguments.of(Knight.class, Wand.class),
+      Arguments.of(Wizard.class, Wand.class),
+      Arguments.of(Knight.class, Mace.class),
+      Arguments.of(Wizard.class, Mace.class),
+      Arguments.of(Elf.class, Wand.class),
+      Arguments.of(Elf.class, Mace.class)
+    );
+  }
+
+  @ParameterizedTest
+  @MethodSource("characterChangeWeaponGenerator")
+  public void changeWeaponTest(Class<Character> characterClass, Class<Weapon> weaponClass) throws InstantiationException, IllegalAccessException{
+    Character character = characterClass.newInstance();
+    Weapon w = weaponClass.newInstance();
+    character.setWeapon(w);
+    assertEquals(character.getWeapon().getClass(), w.getClass());
   }
 
 }

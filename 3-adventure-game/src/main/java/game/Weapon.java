@@ -1,6 +1,14 @@
 package game;
 
-public interface Weapon {
+public abstract class Weapon {
 
-  public int getDamage();
+  private final int damage;
+
+  public Weapon(int damage){
+    this.damage = damage;
+  }
+
+  public int getDamage(){
+    return this.damage;
+  }
 }

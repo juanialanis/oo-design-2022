@@ -9,6 +9,10 @@ public abstract class Character {
     this.life = life;
   }
   
+  public void setWeapon(Weapon w){
+    this.weapon = w;
+  }
+
   public Weapon getWeapon(){
     return weapon;
   }
