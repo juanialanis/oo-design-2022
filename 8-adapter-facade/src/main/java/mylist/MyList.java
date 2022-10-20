@@ -2,16 +2,18 @@ package mylist;
 
 import java.util.Collection;
 
-public interface MyList<E> {
-  public Object delete(int index);
+public interface MyList<E> extends Iterable<E> {
 
-  public boolean insert(Object o);
+  public E delete(int index);
 
-  public boolean insertAll(Collection<?> e);
+  public boolean insert(E o);
 
-  public int getIndex(Object e);
+  public boolean insertAll(Collection<? extends E> e);
+
+  public int getIndex(E e);
 
   public int length();
 
-  public Object obtain(int index); 
+  public E obtain(int index);
+
 }

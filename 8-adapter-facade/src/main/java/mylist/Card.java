@@ -16,6 +16,7 @@ public abstract class Card {
     this.cost = cost;
     this.damage = damage;
     this.type = type;
+    System.out.println("In card\n");
   }
 
   public int getCost() {

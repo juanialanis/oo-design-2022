@@ -4,8 +4,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyArrayListAdapter implements List{
-  MyArrayList myArrayList;
+public class MyArrayListAdapter<E> implements List<E> {
+
+  MyArrayList<E> myArrayList;
+
+  public MyArrayListAdapter() {
+    myArrayList = new MyArrayList<E>();
+  }
 
   @Override
   public int size() {
@@ -14,49 +19,42 @@ public class MyArrayListAdapter implements List{
 
   @Override
   public boolean isEmpty() {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
+  }
+
+  @Override public boolean contains(Object o) {
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
-  public boolean contains(Object o) {
-    // TODO Auto-generated method stub
-    return false;
-  }
-
-  @Override
-  public Iterator iterator() {
-    // TODO Auto-generated method stub
-    return null;
+  public Iterator<E> iterator() {
+    return myArrayList.iterator();
+   // throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public Object[] toArray() {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public Object[] toArray(Object[] a) {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
-  public boolean add(Object e) {
+  public boolean add(E e) {
     return myArrayList.insert(e);
   }
 
   @Override
   public boolean remove(Object o) {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public boolean containsAll(Collection c) {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
@@ -66,47 +64,41 @@ public class MyArrayListAdapter implements List{
 
   @Override
   public boolean addAll(int index, Collection c) {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public boolean removeAll(Collection c) {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public boolean retainAll(Collection c) {
-    // TODO Auto-generated method stub
-    return false;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public void clear() {
-    // TODO Auto-generated method stub
-    
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
-  public Object get(int index) {
+  public E get(int index) {
     return myArrayList.obtain(index);
   }
 
   @Override
   public Object set(int index, Object element) {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public void add(int index, Object element) {
-    // TODO Auto-generated method stub
-    
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
-  public Object remove(int index) {
+  public E remove(int index) {
     return myArrayList.delete(index);
   }
 
@@ -117,25 +109,21 @@ public class MyArrayListAdapter implements List{
 
   @Override
   public int lastIndexOf(Object o) {
-    // TODO Auto-generated method stub
-    return 0;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public ListIterator listIterator() {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public ListIterator listIterator(int index) {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
   public List subList(int fromIndex, int toIndex) {
-    // TODO Auto-generated method stub
-    return null;
+    throw new UnsupportedOperationException("Not implemented");
   }
 }
