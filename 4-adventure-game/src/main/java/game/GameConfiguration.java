@@ -2,6 +2,7 @@ package game;
 
 
 import observer.CurrentGameDataDispaly;
+import observer.CurrentGameDataDispalyInFile;
 import observer.GameData;
 
 public class GameConfiguration {
@@ -10,10 +11,12 @@ public class GameConfiguration {
   Character player1;
   Character player2;
   CurrentGameDataDispaly cgdd;
+  CurrentGameDataDispalyInFile cgddif;
 
   public GameConfiguration(){
     gameData = new GameData();
-    cgdd = new CurrentGameDataDispaly(gameData);
+    addStandardOutputDisplay();
+    addStandardOutputDisplayInFile();
   }
 
   public void setPlayer1Character(Character p){
@@ -38,5 +41,13 @@ public class GameConfiguration {
 
   public void removeStandardOutputDisplay(){
     gameData.removeObserver(cgdd);
+  }
+
+  public void addStandardOutputDisplayInFile(){
+    cgddif = new CurrentGameDataDispalyInFile(gameData);
+  }
+
+  public void removeStandardOutputDisplayInFile(){
+    gameData.removeObserver(cgddif);
   }
 }

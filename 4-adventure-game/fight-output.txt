@@ -1,0 +1,21 @@
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizardattacks the public class game.Knight and does 10 points of damage. 
+The public class game.Knightattacks the public class game.Wizard and does 10 points of damage. 
+The public class game.Wizard has died. 
+--------------------------------------------------------------------------------------

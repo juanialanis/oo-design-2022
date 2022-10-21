@@ -25,7 +25,9 @@ public class Fight {
             this.winner = from;
             this.loser = to;
         }
-        config.gameData.setMeasurements(from.getClass().toGenericString(), to.getClass().toGenericString(), attackDamage, to.getLife());
+        if(config != null && config.gameData != null){
+          config.gameData.setMeasurements(from.getClass().toGenericString(), to.getClass().toGenericString(), attackDamage, to.getLife());
+        }
     }
 
     public void fight() {
