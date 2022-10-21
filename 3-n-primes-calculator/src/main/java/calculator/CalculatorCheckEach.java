@@ -1,13 +1,20 @@
 package calculator;
 
-public class CalculatorCheckEach extends CalculatorBehavior{
+import java.util.ArrayList;
+import java.util.List;
+
+public class CalculatorCheckEach implements CalculatorBehavior{
   
-  public void calculate(int n){
-    for(int i = 0; i <= n; i++){
+  public List<Integer> calculate(int n){
+    List<Integer> result = new ArrayList<>();
+    int i = 0;
+    while(result.size() < n){
       if(isPrime(i)){
-        showResultsBehavior.show(i);
+        result.add(i);
       }
+      i++;
     }
+    return result;
   }
 
   private static boolean isPrime(int n){

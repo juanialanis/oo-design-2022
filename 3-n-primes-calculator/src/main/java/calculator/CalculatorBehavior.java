@@ -1,15 +1,9 @@
 package calculator;
-public abstract class CalculatorBehavior {
-	ShowResultsBehavior showResultsBehavior;
 
-  public abstract void calculate(int n);
+import java.util.List;
 
+public interface CalculatorBehavior {
 
-  public void setShowResultsBehavior(ShowResultsBehavior srb) {
-		showResultsBehavior = srb;
-	}
+  public List<Integer> calculate(int n);
 
-	public void performShow(int n) {
-		showResultsBehavior.show(n);
-	}
 }

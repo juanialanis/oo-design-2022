@@ -1,6 +1,11 @@
 package calculator;
+
+import java.util.List;
+
 public class ShowResultsPrint implements ShowResultsBehavior {
-  public void show(int n){
-    System.out.println(n);
+  public void show(List<Integer> list){
+    for(int n: list){
+      System.out.println(n);
+    }
   }
 }

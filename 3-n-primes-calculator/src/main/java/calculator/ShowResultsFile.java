@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.List;
 import java.io.IOException;
 
 public class ShowResultsFile implements ShowResultsBehavior {
@@ -22,9 +23,11 @@ public class ShowResultsFile implements ShowResultsBehavior {
       e.printStackTrace();
     }
   }
-  public void show(int n){
+  public void show(List<Integer> list){
     try {
-      Files.writeString(Paths.get("output.txt"), (n+"\n"), StandardOpenOption.APPEND);
+      for(int n : list){
+        Files.writeString(Paths.get("output.txt"), (n+"\n"), StandardOpenOption.APPEND);
+      }
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
