@@ -1,20 +1,22 @@
 package mylist;
 
 import java.util.Collection;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class MyArrayList<E> implements MyList<E>{
 
   private final static int DEFAULT_SIZE = 10;
-  private Object[] elements;
+  private E[] elements;
   private int count;
 
   public MyArrayList(){
-    elements = new Object[DEFAULT_SIZE];
+    elements = (E[]) new Object[DEFAULT_SIZE];
     count = 0;
   }
 
   @Override
-  public Object delete(int index) {
+  public E delete(int index) {
     if(index > count || index < 0){
       throw new IndexOutOfBoundsException();
     }
@@ -28,13 +30,13 @@ public class MyArrayList<E> implements MyList<E>{
       elements[i+1] = null;
     }
     count--;
-    return result;
+    return (E) result;
   }
 
   @Override
-  public boolean insert(Object o) {
+  public boolean insert(E o) {
     if(count == elements.length){
-      Object[] newElements = new Object[2*count];
+      E[] newElements = (E[]) new Object[2*count];
       for(int index = 0; index < count; index++){
         newElements[index] = elements[index];
       }
@@ -45,9 +47,9 @@ public class MyArrayList<E> implements MyList<E>{
   }
 
   @Override
-  public boolean insertAll(Collection e) {
-    for(Object element: e){
-      this.insert(element);
+  public boolean insertAll(Collection<? extends E> e) {
+    for (E element : e) {
+        this.insert(element);
     }
     return false;
   }
@@ -68,11 +70,29 @@ public class MyArrayList<E> implements MyList<E>{
   }
 
   @Override
-  public Object obtain(int index) {
+  public E obtain(int index) {
     if(index > count || index < 0){
       throw new IndexOutOfBoundsException();
     }
     return elements[index];
   }
-  
+
+  @Override
+  public Iterator<E> iterator() {
+    return new Iterator<E>() {
+      private int pos=0;
+
+      public boolean hasNext() {
+        return count > pos && elements[pos] != null;
+      }
+
+      public E next() {
+        return elements[pos++];
+      }
+
+      public void remove() {
+        throw new UnsupportedOperationException("Cannot remove an element of an array.");
+      }
+    };
+  }
 }

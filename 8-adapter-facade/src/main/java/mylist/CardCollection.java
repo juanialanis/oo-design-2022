@@ -9,7 +9,7 @@ public class CardCollection {
     List<Card> cards;
 
     public CardCollection() {
-        cards = new ArrayList<Card>();
+        cards = new MyArrayListAdapter<Card>();
     }
 
     public Card draw() {
