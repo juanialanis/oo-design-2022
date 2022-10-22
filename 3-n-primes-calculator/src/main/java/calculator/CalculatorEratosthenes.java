@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CalculatorEratosthenes implements CalculatorBehavior{
+public class CalculatorEratosthenes implements CalculatorBehavior {
   
   private static final int MAX_SIZE = 1000005;
 
