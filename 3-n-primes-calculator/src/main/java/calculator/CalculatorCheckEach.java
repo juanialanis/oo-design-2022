@@ -24,9 +24,9 @@ public class CalculatorCheckEach implements CalculatorBehavior{
     //Run a loop from 2 to n-1
     for(int i=2; i<n; i++){
       // if the number is divisible by i, then n is not a prime number.
-          if(n%i==0)return false;
+      if(n%i==0)return false;
     }
     //otherwise, n is prime number.
     return true;
-}
+  }
 }

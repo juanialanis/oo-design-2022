@@ -1,35 +1,34 @@
 package calculator;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class ShowResultsFile implements ShowResultsBehavior {
 
-  Path path;
-
-  public ShowResultsFile(){
-    path = Paths.get("output.txt");
+  public void show(List<Integer> primes) {
+    BufferedWriter outputWriter = null;
     try {
-      if(!Files.exists(path)){
-        Files.createFile(path);
-      }
-      Files.writeString(Paths.get("output.txt"), "");
+      outputWriter = new BufferedWriter(new FileWriter("output.txt"));
     } catch (IOException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
-  }
-  public void show(List<Integer> list){
-    try {
-      for(int n : list){
-        Files.writeString(Paths.get("output.txt"), (n+"\n"), StandardOpenOption.APPEND);
+    for (Integer prime : primes) {
+      try {
+        outputWriter.write(prime.toString());
+        outputWriter.newLine();
+
+      } catch (IOException e) {
+        e.printStackTrace();
       }
+    }
+
+    try {
+      outputWriter.flush();
+      outputWriter.close();
     } catch (IOException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
