@@ -1,8 +1,10 @@
 package game;
 
 
-import observer.CurrentGameDataDispaly;
-import observer.CurrentGameDataDispalyInFile;
+import observer.AttackDataDispaly;
+import observer.AttackDataDispalyInFile;
+import observer.FightDataDispalyInFile;
+import observer.FightStatistics;
 import observer.GameData;
 
 public class GameConfiguration {
@@ -10,13 +12,16 @@ public class GameConfiguration {
   GameData gameData;	
   Character player1;
   Character player2;
-  CurrentGameDataDispaly cgdd;
-  CurrentGameDataDispalyInFile cgddif;
+  AttackDataDispaly cgdd;
+  AttackDataDispalyInFile cgddif;
+  FightDataDispalyInFile fddif;
+  FightStatistics fs;
 
   public GameConfiguration(){
     gameData = new GameData();
     addStandardOutputDisplay();
     addStandardOutputDisplayInFile();
+    addStatisticsDisplay();
   }
 
   public void setPlayer1Character(Character p){
@@ -36,18 +41,28 @@ public class GameConfiguration {
   }
 
   public void addStandardOutputDisplay(){
-    cgdd = new CurrentGameDataDispaly(gameData);
+    cgdd = new AttackDataDispaly(gameData);
   }
 
   public void removeStandardOutputDisplay(){
-    gameData.removeObserver(cgdd);
+    gameData.removeObserverToAttack(cgdd);
+  }
+
+  public void addStatisticsDisplay(){
+    fs = new FightStatistics(gameData);
+  }
+
+  public void removeStatisticsDisplay(){
+    gameData.removeObserverToFight(fs);
   }
 
   public void addStandardOutputDisplayInFile(){
-    cgddif = new CurrentGameDataDispalyInFile(gameData);
+    cgddif = new AttackDataDispalyInFile(gameData);
+    fddif = new FightDataDispalyInFile(gameData);
   }
 
   public void removeStandardOutputDisplayInFile(){
-    gameData.removeObserver(cgddif);
+    gameData.removeObserverToAttack(cgddif);
   }
+  
 }

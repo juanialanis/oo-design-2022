@@ -1,15 +1,15 @@
 package observer;
 	
-public class CurrentGameDataDispaly implements Observer, DisplayElement {
+public class FightDataDispaly implements Observer, DisplayElement {
 	private int life;
 	private int damageReceived;
 	private String playerAttackType;
 	private String playerReceivesAttackType;
 	private GameData gameData;
 	
-	public CurrentGameDataDispaly(GameData gameData) {
+	public FightDataDispaly(GameData gameData) {
 		this.gameData = gameData;
-		gameData.registerObserver(this);
+		gameData.registerObserverToAttack(this);
 	}
 	
 	public void update() {
