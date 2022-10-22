@@ -5,16 +5,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class CurrentGameDataDispalyInFile implements Observer, DisplayElement {
+public class AttackDataDispalyInFile implements Observer, DisplayElement {
 	private int life;
 	private int damageReceived;
 	private String playerAttackType;
 	private String playerReceivesAttackType;
 	private GameData gameData;
 	
-	public CurrentGameDataDispalyInFile(GameData gameData) {
+	public AttackDataDispalyInFile(GameData gameData) {
 		this.gameData = gameData;
-		gameData.registerObserver(this);
+		gameData.registerObserverToAttack(this);
     try {
       if(!Files.exists(Paths.get("fight-output.txt"))){
         Files.createFile(Paths.get("fight-output.txt"));
@@ -40,7 +40,6 @@ public class CurrentGameDataDispalyInFile implements Observer, DisplayElement {
       Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
       if(life <= 0){
         text = "The " + playerReceivesAttackType + " has died. \n";
-        text += "--------------------------------------------------------------------------------------";
         Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
       }
     } catch (IOException e) {
