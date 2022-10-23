@@ -42,6 +42,26 @@ public class FightTest {
         assertFalse(char2.isAlive());
     }
 
+    // Needed to fulfill 100% branch coverage on Fight
+    @ParameterizedTest
+    @MethodSource("fightGenerator")
+    public void fightChar1StartsDeadTest(Character char1, Character char2) throws InstantiationException, IllegalAccessException {
+        Fight fight = new Fight(char1, char2);
+        char1.sufferDamage(char1.getLife() + 1);
+        fight.fight();
+        assertFalse(char1.isAlive());
+    }
+
+    // Needed to fulfill 100% branch coverage on Fight
+    @ParameterizedTest
+    @MethodSource("fightGenerator")
+    public void fightChar2StartsDeadTest(Character char1, Character char2) throws InstantiationException, IllegalAccessException {
+        Fight fight = new Fight(char1, char2);
+        char2.sufferDamage(char2.getLife() + 1);
+        fight.fight();
+        assertFalse(char2.isAlive());
+    }
+
     static Stream<Arguments> attackGeneratorWithWeaponChange() {
       return Stream.of(
           Arguments.of(new Knight(), new Wizard(),Wand.class)
