@@ -2,7 +2,7 @@ package calculator;
 
 public class EratosthenesCalculator extends Calculator{
   public EratosthenesCalculator() {
-    calculatorBehavior = new CalculatorErasthotenes();
+    calculatorBehavior = new CalculatorEratosthenes();
     showResultsBehavior = new ShowResultsFile();
 	}
 }

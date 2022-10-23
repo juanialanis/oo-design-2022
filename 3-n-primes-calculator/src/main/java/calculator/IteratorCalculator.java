@@ -4,7 +4,7 @@ public class IteratorCalculator extends Calculator {
 
 	public IteratorCalculator() {
     calculatorBehavior = new CalculatorCheckEach();
-    showResultsBehavior = new ShowResultsFile();
+    showResultsBehavior = new ShowResultsPrint();
 	}
 
 }
