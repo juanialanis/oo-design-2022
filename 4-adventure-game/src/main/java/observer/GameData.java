@@ -1,84 +1,90 @@
 package observer;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import game.Character;
+
 public class GameData {
-  private AttackData ad;
-  private FightData fd;
-  private String playerOneType;
-  private String playerOneWeapon;
-	private String playerTwoType;
-	private String playerTwoWeapon;
-	private int damageReceived;
-  private int life;
-  private boolean isFightStarted;
+  private String attackerType;
+  private String attackerWeaponType;
+  private String attackeeType;
+  private String attackeeWeaponType;
+  private int attackerLife;
+  private int attackeeLife;
+  private int attackerWeaponDamage;
+  private int attackeeWeaponDamage;
+  private String fightStatus;
+  private List<Observer> observers;
 
   public GameData(){
-    ad = new AttackData();
-    fd = new FightData();
+    observers = new ArrayList<Observer>();
   }
-
-  public String getCharacterAttackType() {
-		return this.playerOneType;
+	
+	public void registerObserver(Observer o) {
+		observers.add(o);
 	}
 	
-	public String getCharacterReceivesAttackType() {
-		return this.playerTwoType;
+	public void removeObserver(Observer o) {
+		observers.remove(o);
 	}
 	
-	public int getDamageReceived() {
-		return this.damageReceived;
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update();
+		}
+	}
+	
+	public void detailsChanged() {
+		notifyObservers();
 	}
 
-  public int getLife() {
-		return this.life;
+  public String getAttackerType() {
+		return this.attackerType;
+	}
+	
+	public String getAttackeeType() {
+		return this.attackeeType;
 	}
 
-  public boolean getIsFightStarted() {
-		return this.isFightStarted;
+  public String getAttackerWeaponType() {
+		return this.attackerWeaponType;
+	}
+	
+	public String getAttackeeWeaponType() {
+		return this.attackeeWeaponType;
 	}
 
-  public String getPlayerOneWeapon(){
-    return this.playerOneWeapon;
-  }
-
-  public String getPlayerTwoWeapon(){
-    return this.playerTwoWeapon;
-  }
-
-  public void registerObserverToAttack(Observer d){
-    ad.registerObserver(d);
-  }
-
-  public void removeObserverToAttack(Observer d){
-    ad.removeObserver(d);
-  }
-
-  public void registerObserverToFight(Observer d){
-    fd.registerObserver(d);
-  }
-
-  public void removeObserverToFight(Observer d){
-    fd.removeObserver(d);
-  }
-
-  public void setAttackDetails(String cat, String crat, int damage, int life) {
-		this.playerOneType = cat;
-		this.playerTwoType = crat;
-		this.damageReceived = damage;
-		this.life = life;
-		ad.attackDetailsChanged();
+  public int getAttackerWeaponDamage() {
+		return this.attackerWeaponDamage;
+	}
+	
+	public int getAttackeeWeaponDamage() {
+		return this.attackeeWeaponDamage;
 	}
 
-  public void setFightDetails(boolean fightStarted, String p1type, String p2type) {
-    if(fightStarted){
-      this.playerOneType = p1type;
-      this.playerTwoType = p2type;
-      this.isFightStarted = fightStarted;
-    }
-    else{
-      this.playerOneWeapon = p1type;
-      this.playerTwoWeapon = p2type;
-      this.isFightStarted = fightStarted;
-    }
-		fd.attackDetailsChanged();
+  public int getAttackerLife() {
+		return this.attackerLife;
+	}
+	
+	public int getAttackeeLife() {
+		return this.attackeeLife;
+	}
+
+  public String getFightStatus() {
+		return this.fightStatus;
+	}
+
+  public void setAttackDetails(Character p1, Character p2, String status) {
+    attackerType = p1.getClass().toString();
+    attackerLife = p1.getLife();
+    attackerWeaponType = p1.getWeapon().getClass().toString();
+    attackerWeaponDamage = p1.getWeapon().getDamage();
+    attackeeType = p2.getClass().toString();
+    attackeeLife = p2.getLife();
+    attackeeWeaponType = p2.getWeapon().getClass().toString();
+    attackeeWeaponDamage = p2.getWeapon().getDamage();
+    fightStatus = status;
+		detailsChanged();
 	}
 }

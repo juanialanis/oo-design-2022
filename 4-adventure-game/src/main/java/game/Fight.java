@@ -26,13 +26,13 @@ public class Fight {
             this.loser = to;
         }
         if(config != null && config.gameData != null){
-          config.gameData.setAttackDetails(from.getClass().toString(), to.getClass().toString(), attackDamage, to.getLife());
+          config.gameData.setAttackDetails(from, to, "attack");
         }
     }
 
     public void fight() {
       if(config != null && config.gameData != null){
-        config.gameData.setFightDetails(true, fighter1.getClass().toString(), fighter2.getClass().toString());
+        config.gameData.setAttackDetails(fighter1, fighter2, "start-fight");
       }
       while(fighter1.isAlive() && fighter2.isAlive()) {
           attack(fighter1, fighter2);
@@ -40,7 +40,7 @@ public class Fight {
           attack(fighter2, fighter1);
       }
       if(config != null && config.gameData != null){
-        config.gameData.setFightDetails(false, fighter1.getWeapon().getClass().toString(), fighter2.getWeapon().getClass().toString());
+        config.gameData.setAttackDetails(fighter1, fighter2, "end-fight");
       }
     }
 

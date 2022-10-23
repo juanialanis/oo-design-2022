@@ -9,14 +9,14 @@ public class FightDataDispaly implements Observer, DisplayElement {
 	
 	public FightDataDispaly(GameData gameData) {
 		this.gameData = gameData;
-		gameData.registerObserverToAttack(this);
+		gameData.registerObserver(this);
 	}
 	
 	public void update() {
-		this.life = this.gameData.getLife();
-		this.damageReceived = gameData.getDamageReceived();
-    this.playerReceivesAttackType = gameData.getCharacterReceivesAttackType();
-    this.playerAttackType = gameData.getCharacterAttackType();
+		this.life = this.gameData.getAttackeeLife();
+		this.damageReceived = gameData.getAttackerWeaponDamage();
+    this.playerReceivesAttackType = gameData.getAttackeeType();
+    this.playerAttackType = gameData.getAttackerType();
 		display();
 	}
 	

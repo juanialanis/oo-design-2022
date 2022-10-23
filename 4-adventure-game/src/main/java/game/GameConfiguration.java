@@ -45,7 +45,7 @@ public class GameConfiguration {
   }
 
   public void removeStandardOutputDisplay(){
-    gameData.removeObserverToAttack(cgdd);
+    gameData.removeObserver(cgdd);
   }
 
   public void addStatisticsDisplay(){
@@ -53,7 +53,7 @@ public class GameConfiguration {
   }
 
   public void removeStatisticsDisplay(){
-    gameData.removeObserverToFight(fs);
+    gameData.removeObserver(fs);
   }
 
   public void addStandardOutputDisplayInFile(){
@@ -62,7 +62,7 @@ public class GameConfiguration {
   }
 
   public void removeStandardOutputDisplayInFile(){
-    gameData.removeObserverToAttack(cgddif);
+    gameData.removeObserver(cgddif);
   }
   
 }
