@@ -1,6 +1,6 @@
 package pizzastore.abstractfactory;
 
-public class SlicedPepperoni implements Pepperoni {
+public c]lass SlicedPepperoni implements Pepperoni {
 
 	public String toString() {
 		return "Sliced Pepperoni";

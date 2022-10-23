@@ -13,6 +13,8 @@ public class SimplePizzaFactory {
 			pizza = new ClamPizza();
 		} else if (type.equals("veggie")) {
 			pizza = new VeggiePizza();
+		} else if (type.equals("argie")) {
+			pizza = new ArgentinePizza();
 		}
 		return pizza;
 	}
