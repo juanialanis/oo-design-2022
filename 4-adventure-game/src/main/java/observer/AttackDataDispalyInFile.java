@@ -14,7 +14,7 @@ public class AttackDataDispalyInFile implements Observer, DisplayElement {
 	
 	public AttackDataDispalyInFile(GameData gameData) {
 		this.gameData = gameData;
-		gameData.registerObserverToAttack(this);
+		gameData.registerObserver(this);
     try {
       if(!Files.exists(Paths.get("fight-output.txt"))){
         Files.createFile(Paths.get("fight-output.txt"));
@@ -26,11 +26,13 @@ public class AttackDataDispalyInFile implements Observer, DisplayElement {
 	}
 	
 	public void update() {
-		this.life = this.gameData.getLife();
-		this.damageReceived = gameData.getDamageReceived();
-    this.playerReceivesAttackType = gameData.getCharacterReceivesAttackType();
-    this.playerAttackType = gameData.getCharacterAttackType();
-		display();
+    if(gameData.getFightStatus().equals("attack")){
+      this.life = this.gameData.getAttackeeLife();
+      this.damageReceived = gameData.getAttackerWeaponDamage();
+      this.playerReceivesAttackType = gameData.getAttackeeType();
+      this.playerAttackType = gameData.getAttackerType();
+      display();
+    }
 	}
 	
 	public void display() {

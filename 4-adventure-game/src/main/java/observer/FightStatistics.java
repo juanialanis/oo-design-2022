@@ -22,7 +22,7 @@ public class FightStatistics implements Observer, DisplayElement {
 	
 	public FightStatistics(GameData gameData) {
 		this.gameData = gameData;
-		gameData.registerObserverToFight(this);
+		gameData.registerObserver(this);
     try {
       if(!Files.exists(Paths.get("fight-output.txt"))){
         Files.createFile(Paths.get("fight-output.txt"));
@@ -34,11 +34,11 @@ public class FightStatistics implements Observer, DisplayElement {
 	}
 	
 	public void update() {
-    if(!gameData.getIsFightStarted()){
-      winnerCharType = gameData.getCharacterAttackType();
-      losserCharType = gameData.getCharacterReceivesAttackType();
-      winnerWeapon = gameData.getPlayerOneWeapon();
-      looserWeapon = gameData.getPlayerTwoWeapon();
+    if(gameData.getFightStatus().equals("start-fight")){
+      winnerCharType = gameData.getAttackerType();
+      losserCharType = gameData.getAttackeeType();
+      winnerWeapon = gameData.getAttackerWeaponType();
+      looserWeapon = gameData.getAttackeeWeaponType();
       records = new ArrayList<List<String>>();
       boolean found = false;
       try {
@@ -48,12 +48,12 @@ public class FightStatistics implements Observer, DisplayElement {
           records.add(Arrays.asList(values));
         }
         for(List<String> fight : records){
-          System.out.println("COMPARA " + fight.get(1) + " CON " + winnerCharType + " Y ES VERDADERO? " + fight.get(1).equals(winnerCharType));
-          System.out.println("COMPARA " + fight.get(2) + " CON " + winnerWeapon + " Y ES VERDADERO? " + fight.get(2).equals(winnerWeapon));
-          System.out.println("COMPARA " + fight.get(4) + " CON " + losserCharType + " Y ES VERDADERO? " + fight.get(3).equals(losserCharType));
-          System.out.println("COMPARA " + fight.get(5) + " CON " + looserWeapon + " Y ES VERDADERO? " + fight.get(4).equals(looserWeapon));
-          if(fight.get(1).equals(winnerCharType) && fight.get(2).equals(winnerWeapon) && fight.get(4).equals(losserCharType) && fight.get(5).equals(losserCharType)){
+          if(fight.get(1).equals(winnerCharType) && fight.get(2).equals(winnerWeapon) && fight.get(4).equals(losserCharType) && fight.get(5).equals(looserWeapon)){
             fight.set(0, String.valueOf(1+ Integer.parseInt(fight.get(0))));
+            found = true;
+          }
+          else if(fight.get(4).equals(winnerCharType) && fight.get(5).equals(winnerWeapon) && fight.get(1).equals(losserCharType) && fight.get(2).equals(looserWeapon)){
+            fight.set(3, String.valueOf(1+ Integer.parseInt(fight.get(3))));
             found = true;
           }
         }
