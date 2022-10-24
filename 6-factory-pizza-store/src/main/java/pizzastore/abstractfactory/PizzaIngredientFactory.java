@@ -8,8 +8,7 @@ public interface PizzaIngredientFactory {
 	public Veggies[] createVeggies();
 	public Pepperoni createPepperoni();
 	public Clams createClam();
-	public Especial[] createEspecial();
-	public Muzza createMuzza();
-	public Fugazzetta createFugazzetta();
+  public Onion createOnion();
+  public Ham createHam();
  
 }

@@ -12,6 +12,5 @@ public class MuzzaPizza extends Pizza {
 		dough = ingredientFactory.createDough();
 		sauce = ingredientFactory.createSauce();
 		cheese = ingredientFactory.createCheese();
-		muzza = ingredientFactory.createMuzza();
 	}
 }

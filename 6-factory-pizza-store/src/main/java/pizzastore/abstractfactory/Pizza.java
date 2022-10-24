@@ -9,8 +9,8 @@ public abstract class Pizza {
 	Cheese cheese;
 	Pepperoni pepperoni;
 	Clams clam;
-	Especial especial[];
-	Fugazzetta fugazzetta;
+	Onion onion;
+  Ham ham;
 
 	abstract void prepare();
 

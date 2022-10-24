@@ -30,4 +30,12 @@ public class ChicagoPizzaIngredientFactory
 	public Clams createClam() {
 		return new FrozenClams();
 	}
+
+  public Onion createOnion() {
+    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  }
+
+  public Ham createHam() {
+    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  }
 }

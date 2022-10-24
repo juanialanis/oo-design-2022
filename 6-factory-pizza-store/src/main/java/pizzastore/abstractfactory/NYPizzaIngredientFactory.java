@@ -26,4 +26,12 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 	public Clams createClam() {
 		return new FreshClams();
 	}
+
+  public Onion createOnion() {
+    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  }
+
+  public Ham createHam() {
+    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  }
 }
