@@ -2,8 +2,8 @@ package game;
 
 public class Game {
   
-  GameConfiguration config;
-  Fight fight;
+  private GameConfiguration config;
+  private Fight fight;
 
   public Game(){
     config = new GameConfiguration();
@@ -22,5 +22,4 @@ public class Game {
     startFight();
     fight.fight();
   }
-
 }

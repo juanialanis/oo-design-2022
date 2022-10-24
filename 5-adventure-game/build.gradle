@@ -27,7 +27,7 @@ java {
 task run(type: JavaExec) {
     group = "Execution"
     classpath = sourceSets.main.runtimeClasspath
-    // main = 'weatherstation.WeatherStation'
+    main = 'game.GameSimulator'
 }
 
 dependencies {
