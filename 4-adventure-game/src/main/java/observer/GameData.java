@@ -20,60 +20,65 @@ public class GameData {
   public GameData(){
     observers = new ArrayList<Observer>();
   }
-	
-	public void registerObserver(Observer o) {
-		observers.add(o);
-	}
-	
-	public void removeObserver(Observer o) {
-		observers.remove(o);
-	}
-	
-	public void notifyObservers() {
-		for (Observer observer : observers) {
-			observer.update();
-		}
-	}
-	
-	public void detailsChanged() {
-		notifyObservers();
-	}
+
+  // test method
+  public int getNumberOfObservers() {
+    return this.observers.size();
+  }
+
+  public void registerObserver(Observer o) {
+    observers.add(o);
+  }
+
+  public void removeObserver(Observer o) {
+    observers.remove(o);
+  }
+
+  public void notifyObservers() {
+    for (Observer observer : observers) {
+      observer.update();
+    }
+  }
+
+  public void detailsChanged() {
+    notifyObservers();
+  }
 
   public String getAttackerType() {
-		return this.attackerType;
-	}
-	
-	public String getAttackeeType() {
-		return this.attackeeType;
-	}
+    return this.attackerType;
+  }
+
+  public String getAttackeeType() {
+    return this.attackeeType;
+  }
 
   public String getAttackerWeaponType() {
-		return this.attackerWeaponType;
-	}
-	
-	public String getAttackeeWeaponType() {
-		return this.attackeeWeaponType;
-	}
+    return this.attackerWeaponType;
+  }
+
+  public String getAttackeeWeaponType() {
+    return this.attackeeWeaponType;
+  }
 
   public int getAttackerWeaponDamage() {
-		return this.attackerWeaponDamage;
-	}
-	
-	public int getAttackeeWeaponDamage() {
-		return this.attackeeWeaponDamage;
-	}
+    return this.attackerWeaponDamage;
+  }
+
+  public int getAttackeeWeaponDamage() {
+    return this.attackeeWeaponDamage;
+  }
 
   public int getAttackerLife() {
-		return this.attackerLife;
-	}
-	
-	public int getAttackeeLife() {
-		return this.attackeeLife;
-	}
+    return this.attackerLife;
+  }
+
+  public int getAttackeeLife() {
+    return this.attackeeLife;
+  }
 
   public String getFightStatus() {
-		return this.fightStatus;
-	}
+    return this.fightStatus;
+  }
 
   public void setAttackDetails(Character p1, Character p2, String status) {
     attackerType = p1.getClass().toString();
@@ -85,6 +90,6 @@ public class GameData {
     attackeeWeaponType = p2.getWeapon().getClass().toString();
     attackeeWeaponDamage = p2.getWeapon().getDamage();
     fightStatus = status;
-		detailsChanged();
-	}
+    detailsChanged();
+  }
 }

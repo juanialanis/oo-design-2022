@@ -13,16 +13,16 @@ import com.opencsv.CSVReader;
 import java.util.List;
 
 public class FightStatistics implements Observer, DisplayElement {
-	private String winnerCharType;
-	private String winnerWeapon;
-	private String losserCharType;
-	private String looserWeapon;
+  private String winnerCharType;
+  private String winnerWeapon;
+  private String loserCharType;
+  private String loserWeapon;
   private GameData gameData;
   List<List<String>> records;
-	
-	public FightStatistics(GameData gameData) {
-		this.gameData = gameData;
-		gameData.registerObserver(this);
+
+  public FightStatistics(GameData gameData) {
+    this.gameData = gameData;
+    gameData.registerObserver(this);
     try {
       if(!Files.exists(Paths.get("fight-output.txt"))){
         Files.createFile(Paths.get("fight-output.txt"));
@@ -31,14 +31,14 @@ public class FightStatistics implements Observer, DisplayElement {
     } catch (IOException e) {
       e.printStackTrace();
     }
-	}
-	
-	public void update() {
+  }
+
+  public void update() {
     if(gameData.getFightStatus().equals("start-fight")){
       winnerCharType = gameData.getAttackerType();
-      losserCharType = gameData.getAttackeeType();
+      loserCharType = gameData.getAttackeeType();
       winnerWeapon = gameData.getAttackerWeaponType();
-      looserWeapon = gameData.getAttackeeWeaponType();
+      loserWeapon = gameData.getAttackeeWeaponType();
       records = new ArrayList<List<String>>();
       boolean found = false;
       try {
@@ -48,17 +48,17 @@ public class FightStatistics implements Observer, DisplayElement {
           records.add(Arrays.asList(values));
         }
         for(List<String> fight : records){
-          if(fight.get(1).equals(winnerCharType) && fight.get(2).equals(winnerWeapon) && fight.get(4).equals(losserCharType) && fight.get(5).equals(looserWeapon)){
+          if(fight.get(1).equals(winnerCharType) && fight.get(2).equals(winnerWeapon) && fight.get(4).equals(loserCharType) && fight.get(5).equals(loserWeapon)){
             fight.set(0, String.valueOf(1+ Integer.parseInt(fight.get(0))));
             found = true;
           }
-          else if(fight.get(4).equals(winnerCharType) && fight.get(5).equals(winnerWeapon) && fight.get(1).equals(losserCharType) && fight.get(2).equals(looserWeapon)){
+          else if(fight.get(4).equals(winnerCharType) && fight.get(5).equals(winnerWeapon) && fight.get(1).equals(loserCharType) && fight.get(2).equals(loserWeapon)){
             fight.set(3, String.valueOf(1+ Integer.parseInt(fight.get(3))));
             found = true;
           }
         }
         if(!found){
-          String[] toAdd = {"1", winnerCharType, winnerWeapon, "0", losserCharType, looserWeapon};
+          String[] toAdd = {"1", winnerCharType, winnerWeapon, "0", loserCharType, loserWeapon};
           records.add(Arrays.asList(toAdd));
         }
       }
@@ -67,9 +67,9 @@ public class FightStatistics implements Observer, DisplayElement {
       }
       display();
     }
-	}
-	
-	public void display() {
+  }
+
+  public void display() {
     try{
       FileWriter outputfile = new FileWriter("statistics.csv");
     
@@ -86,5 +86,5 @@ public class FightStatistics implements Observer, DisplayElement {
     catch(Exception e){
 
     }
-	}
+  }
 }

@@ -5,13 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class FightDataDispalyInFile implements Observer, DisplayElement {
+public class AttackDataDisplayInFile implements Observer, DisplayElement {
+	private int life;
+	private int damageReceived;
 	private String playerAttackType;
 	private String playerReceivesAttackType;
-  private String gameStatus;
 	private GameData gameData;
 	
-	public FightDataDispalyInFile(GameData gameData) {
+	public AttackDataDisplayInFile(GameData gameData) {
 		this.gameData = gameData;
 		gameData.registerObserver(this);
     try {
@@ -25,23 +26,22 @@ public class FightDataDispalyInFile implements Observer, DisplayElement {
 	}
 	
 	public void update() {
-    this.playerReceivesAttackType = gameData.getAttackeeType();
-    this.playerAttackType = gameData.getAttackerType();
-    this.gameStatus = gameData.getFightStatus();
-		display();
+    if(gameData.getFightStatus().equals("attack")){
+      this.life = this.gameData.getAttackeeLife();
+      this.damageReceived = gameData.getAttackerWeaponDamage();
+      this.playerReceivesAttackType = gameData.getAttackeeType();
+      this.playerAttackType = gameData.getAttackerType();
+      display();
+    }
 	}
 	
 	public void display() {
 		try {
-      String text;
-      if(gameStatus.equals("start-fight")){
-        text = "The battle between " + playerAttackType 
-			  + "and " + playerReceivesAttackType + " was started \n" ;
-        Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
-      }
-      else if (gameStatus.equals("end-fight")){
-        text = "The battle has ended. \n";
-        text += "--------------------------------------------------------------------------------------";
+      String text = "The " + playerAttackType 
+			+ "attacks the " + playerReceivesAttackType + " and does " + damageReceived + " points of damage. \n" ;
+      Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
+      if(life <= 0){
+        text = "The " + playerReceivesAttackType + " has died. \n";
         Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
       }
     } catch (IOException e) {
