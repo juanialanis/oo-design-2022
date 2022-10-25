@@ -1,7 +1,5 @@
 package game;
 
-import observer.AttackDataDispaly;
-import observer.DisplayElement;
 import observer.GameData;
 import observer.Observer;
 

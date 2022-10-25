@@ -7,8 +7,6 @@ import java.nio.file.StandardOpenOption;
 
 public class FightDataDispalyInFile implements Observer, DisplayElement {
 	private String playerAttackType;
-	private String playerReceivesAttackType;
-  private String gameStatus;
 	private GameData gameData;
 
   public void setGameData(GameData gameData){
@@ -31,7 +29,6 @@ public class FightDataDispalyInFile implements Observer, DisplayElement {
   }
 	
 	public void updateFightData() {
-    this.playerReceivesAttackType = gameData.getAttackeeType();
     this.playerAttackType = gameData.getAttackerType();
 		display();
 	}
@@ -39,7 +36,7 @@ public class FightDataDispalyInFile implements Observer, DisplayElement {
 	public void display() {
 		try {
       String text;
-      text = "The battle has ended. \n";
+      text = "The battle has ended. The player " + playerAttackType + " wins \n";
       text += "--------------------------------------------------------------------------------------";
       Files.writeString(Paths.get("fight-output.txt"), text, StandardOpenOption.APPEND);
     } catch (IOException e) {
