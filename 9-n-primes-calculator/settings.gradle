@@ -8,4 +8,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = '3-n-primes-calculator'
+rootProject.name = '9-n-primes-calculator'
