@@ -16,39 +16,51 @@ public class CalculatorTest {
 
     static Stream<Arguments> primesCalculatorGenerator() {
         return Stream.of(
-                         Arguments.of(new EratosthenesCalculator(), new ShowResultsPrint(), 3),
-                         Arguments.of(new EratosthenesCalculator(), new ShowResultsFile(), 5),
-                         Arguments.of(new IteratorCalculator(), new ShowResultsPrint(), 10),
-                         Arguments.of(new IteratorCalculator(), new ShowResultsFile(), 15),
-                         Arguments.of(new EratosthenesCalculator(), new ShowResultsPrint(), 20),
-                         Arguments.of(new EratosthenesCalculator(), new ShowResultsFile(), 25),
-                         Arguments.of(new IteratorCalculator(), new ShowResultsPrint(), 30),
-                         Arguments.of(new IteratorCalculator(), new ShowResultsFile(), 25)
+                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 3),
+                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 5),
+                         Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 10),
+                         Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 15),
+                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 20),
+                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 25),
+                         Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 30),
+                         Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 35)
                          );
     }
 
     @ParameterizedTest
     @MethodSource("primesCalculatorGenerator")
-    public void primesTest(Calculator calculator, ShowResultsBehavior outputBehavior, int n) {
-        Calculator calc = calculator;
-        calc.setShowResultsBehavior(outputBehavior);
-        calc.performCalculate(n);
-        calc.performShow();
+    public void primesTest(CalculatorBehavior calculator, ShowResultsBehavior outputBehavior, int n) {
+        Calculator calc = new Calculator(calculator, outputBehavior, n);
+        calc.calculateAndShow();
     }
 
     static Stream<Arguments> changeCalculatorBehaviorGenerator() {
         return Stream.of(
-                         Arguments.of(new EratosthenesCalculator(), new CalculatorCheckEach() , 3),
-                         Arguments.of(new IteratorCalculator(), new CalculatorEratosthenes(), 10)
+                         Arguments.of(new CalculatorEratosthenes(), new CalculatorCheckEach() , 3),
+                         Arguments.of(new CalculatorCheckEach(), new CalculatorEratosthenes(), 10)
                          );
     }
 
     @ParameterizedTest
     @MethodSource("changeCalculatorBehaviorGenerator")
-    public void changeBehaviorTest(Calculator calculator, CalculatorBehavior calcBehavior, int n) {
-        Calculator calc = calculator;
-        calc.setCalculatorBehavior(calcBehavior);
-        calc.performCalculate(n);
-        calc.performShow();
+    public void changeBehaviorTest(CalculatorBehavior behaviorOne, CalculatorBehavior behaviorTwo, int n) {
+        Calculator calc = new Calculator(behaviorOne, new ShowResultsPrint(), n);
+        calc.setCalculatorBehavior(behaviorTwo);
+        calc.calculateAndShow();
+    }
+
+    static Stream<Arguments> changeShowResultsBehaviorGenerator() {
+        return Stream.of(
+                         Arguments.of(new ShowResultsPrint(), new ShowResultsFile() , 3),
+                         Arguments.of(new ShowResultsFile(), new ShowResultsPrint(), 10)
+                         );
+    }
+
+    @ParameterizedTest
+    @MethodSource("changeShowResultsBehaviorGenerator")
+    public void changeBehaviorTest(ShowResultsBehavior behaviorOne, ShowResultsBehavior behaviorTwo, int n) {
+        Calculator calc = new Calculator(new CalculatorEratosthenes(), behaviorOne, n);
+        calc.setShowResultsBehavior(behaviorTwo);
+        calc.performCalculate();
     }
 }
