@@ -12,6 +12,12 @@ plugins {
 	id 'idea' // optional (to generate IntelliJ IDEA project files)
 }
 
+task run(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'barista.BeverageTestDrive'
+}
+
 repositories {
 	mavenCentral()
 }
