@@ -9,7 +9,7 @@ public abstract class Calculator {
 		showNumbers(results);
 	}
 
-	public abstract List<Integer> calculateNumbers(int n);
+	abstract List<Integer> calculateNumbers(int n);
 
-  public abstract void showNumbers(List<Integer> results);
+  abstract void showNumbers(List<Integer> results);
 }
