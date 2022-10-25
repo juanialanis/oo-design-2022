@@ -40,4 +40,8 @@ public class GameConfiguration {
   public void addDisplay(Observer display){
     gameData.registerObserver(display);
   }
+
+  public void removeDisplay(Observer display){
+    gameData.removeObserver(display);
+  }
 }

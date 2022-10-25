@@ -24,7 +24,7 @@ public class FightStatistics implements Observer, DisplayElement {
     this.gameData = gameData;
   }
 	
-	public FightStatistics(GameData gameData) {
+	public FightStatistics() {
     try {
       if(!Files.exists(Paths.get("fight-output.txt"))){
         Files.createFile(Paths.get("fight-output.txt"));

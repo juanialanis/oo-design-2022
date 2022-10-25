@@ -24,7 +24,17 @@ public class GameData {
 	}
 	
 	public void removeObserver(Observer o) {
-		observers.remove(o);
+    ArrayList<Integer> toDelete = new ArrayList<>();
+    for(int i = 0; i < observers.size(); i++){
+      if(observers.get(i).getClass().equals(o.getClass())){
+        toDelete.add(i);
+      }
+    }
+    int updateIndex = 0;
+    for(int i : toDelete){
+      observers.remove(i-updateIndex);
+      updateIndex++;
+    }
 	}
 	
 	public void notifyAttackObservers() {

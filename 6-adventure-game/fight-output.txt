@@ -114,3 +114,21 @@ The class game.Elfattacks the class game.Knight and does 10 points of damage.
 The class game.Knightattacks the class game.Elf and does 20 points of damage. 
 The battle has ended. 
 --------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
