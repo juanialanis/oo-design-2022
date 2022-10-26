@@ -7,10 +7,8 @@ public abstract class Pizza {
 	Sauce sauce;
 	Veggies veggies[];
 	Cheese cheese;
-	Pepperoni pepperoni;
-	Clams clam;
+	Meat[] meats;
 	Onion onion;
-  Ham ham;
 
 	abstract void prepare();
 
@@ -58,13 +56,13 @@ public abstract class Pizza {
 			}
 			result.append("\n");
 		}
-		if (clam != null) {
-			result.append(clam);
-			result.append("\n");
-		}
-		if (pepperoni != null) {
-			result.append(pepperoni);
-			result.append("\n");
+		if (meats != null) {
+			for (int i = 0; i < meats.length; i++) {
+				result.append(meats[i]);
+				if (i < meats.length-1) {
+					result.append(", ");
+				}
+			}
 		}
 		return result.toString();
 	}

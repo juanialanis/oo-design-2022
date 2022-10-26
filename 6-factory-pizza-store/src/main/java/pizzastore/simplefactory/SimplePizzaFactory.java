@@ -15,7 +15,9 @@ public class SimplePizzaFactory {
 			pizza = new VeggiePizza();
 		} else if (type.equals("argie")) {
 			pizza = new ArgentinePizza();
-		}
+		} else {
+      throw new IllegalArgumentException("This pizza does not exist");
+    }
 		return pizza;
 	}
 }

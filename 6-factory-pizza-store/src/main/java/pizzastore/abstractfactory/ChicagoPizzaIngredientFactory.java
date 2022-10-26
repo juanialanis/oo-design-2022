@@ -23,19 +23,9 @@ public class ChicagoPizzaIngredientFactory
 		return veggies;
 	}
 
-	public Pepperoni createPepperoni() {
-		return new SlicedPepperoni();
-	}
-
-	public Clams createClam() {
-		return new FrozenClams();
-	}
-
-  public Onion createOnion() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  public Meat[] createMeat() {
+    Meat meats[] = {new FrozenClams(), new SlicedPepperoni()};
+    return meats;
   }
 
-  public Ham createHam() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
-  }
 }

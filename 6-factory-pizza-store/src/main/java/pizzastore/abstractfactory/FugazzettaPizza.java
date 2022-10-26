@@ -12,6 +12,5 @@ public class FugazzettaPizza extends Pizza {
 		dough = ingredientFactory.createDough();
 		sauce = ingredientFactory.createSauce();
 		cheese = ingredientFactory.createCheese();
-		onion = ingredientFactory.createOnion();
 	}
 }

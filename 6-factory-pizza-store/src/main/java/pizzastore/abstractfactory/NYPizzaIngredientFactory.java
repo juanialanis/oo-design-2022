@@ -18,20 +18,10 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 		Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
 		return veggies;
 	}
- 
-	public Pepperoni createPepperoni() {
-		return new SlicedPepperoni();
-	}
 
-	public Clams createClam() {
-		return new FreshClams();
-	}
-
-  public Onion createOnion() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  public Meat[] createMeat() {
+    Meat meats[] = {new FreshClams(), new SlicedPepperoni()};
+    return meats;
   }
 
-  public Ham createHam() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
-  }
 }

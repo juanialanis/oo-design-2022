@@ -27,6 +27,11 @@ public class NYPizzaStore extends PizzaStore {
 			pizza = new PepperoniPizza(ingredientFactory);
 			pizza.setName("New York Style Pepperoni Pizza");
  
+		} else if (item.equals("nopizza")) {
+
+			pizza = new ForTestingPurposesPizza(ingredientFactory);
+			pizza.setName("No Pizza - It's for testing purposes");
+ 
 		} 
 		return pizza;
 	}

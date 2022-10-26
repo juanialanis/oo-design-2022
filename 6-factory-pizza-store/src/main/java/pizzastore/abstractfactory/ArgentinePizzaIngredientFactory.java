@@ -18,23 +18,10 @@ public class ArgentinePizzaIngredientFactory implements PizzaIngredientFactory {
 		Veggies veggies[] = { new Onion(), new RedPepper() };
 		return veggies;
 	}
-
-  public Onion createOnion() {
-    return new Onion();
-  }
-
-  public Ham createHam() {
-    return new Ham();
-  }
-
-  @Override
-  public Pepperoni createPepperoni() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
-  }
-
-  @Override
-  public Clams createClam() {
-    throw new UnsupportedOperationException("This ingredient is not available in this store.");
+  
+  public Meat[] createMeat() {
+    Meat[] meats = { new Ham() };
+    return meats;
   }
 
 }
