@@ -23,6 +23,18 @@ dependencies {
 	testImplementation('org.easymock:easymock:4.3')
 }
 
+task runRemote(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'remotecontrol.remote.RemoteLoader'
+}
+
+task runUndo(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'remotecontrol.remotewithundo.RemoteLoader'
+}
+
 test {
 	useJUnitPlatform {
 		testLogging {
