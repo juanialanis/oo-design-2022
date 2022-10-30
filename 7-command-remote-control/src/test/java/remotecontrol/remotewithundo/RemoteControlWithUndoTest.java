@@ -13,9 +13,14 @@ public class RemoteControlWithUndoTest {
     LightOnCommand garageLightOn;
     LightOffCommand garageLightOff;
 
+    Light bedroomLight;
+    DimmerLightOnCommand bedroomLightOn;
+    DimmerLightOffCommand bedroomLightOff;
+
     CeilingFan ceilingFan;
     CeilingFanMediumCommand ceilingFanMedium;
     CeilingFanHighCommand ceilingFanHigh;
+    CeilingFanLowCommand ceilingFanLow;
     CeilingFanOffCommand ceilingFanOff;
 
     Amplifier amp;
@@ -30,11 +35,19 @@ public class RemoteControlWithUndoTest {
     }
 
     @BeforeEach
+    void setUpDimmerLights() {
+        bedroomLight = new Light("Bedroom");
+        bedroomLightOn = new DimmerLightOnCommand(bedroomLight);
+        bedroomLightOff = new DimmerLightOffCommand(bedroomLight);
+    }
+
+    @BeforeEach
     public void setUpCeilingFan() {
         ceilingFan = new CeilingFan("Garage");
         ceilingFanMedium = new CeilingFanMediumCommand(ceilingFan);
         ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
         ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+        ceilingFanLow = new CeilingFanLowCommand(ceilingFan);
     }
 
     @BeforeEach
@@ -52,28 +65,54 @@ public class RemoteControlWithUndoTest {
     @Test
     public void lightsTest() {
         remoteControl.setCommand(0, garageLightOn, garageLightOff);
+
         remoteControl.onButtonWasPushed(0);
-        remoteControl.offButtonWasPushed(0);
-        System.out.println(remoteControl);
+        remoteControl.onButtonWasPushed(0);
         remoteControl.undoButtonWasPushed();
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+
         remoteControl.offButtonWasPushed(0);
         remoteControl.onButtonWasPushed(0);
-        System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
     }
 
     @Test
-    public void ceilingFanTest() {
-        remoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
-        remoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
+    public void dimmerLightsTest() {
+        remoteControl.setCommand(0, bedroomLightOn, bedroomLightOff);
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
-        System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
 
-        remoteControl.onButtonWasPushed(1);
-        System.out.println(remoteControl);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+    }
+
+    @ParameterizedTest
+    @CsvSource({ "0, 0", "0, 1", "0, 2", "1, 0", "1, 1", "1, 2", "2, 0", "2, 1", "2, 2" })
+    public void ceilingFanTest(int speed, int prev) {
+        remoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
+        remoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
+        remoteControl.setCommand(2, ceilingFanLow, ceilingFanOff);
+
+        remoteControl.onButtonWasPushed(prev);
+        remoteControl.onButtonWasPushed(speed);
+        remoteControl.undoButtonWasPushed();
+
+        remoteControl.onButtonWasPushed(prev);
+        remoteControl.offButtonWasPushed(speed);
+        remoteControl.undoButtonWasPushed();
+
+        remoteControl.offButtonWasPushed(prev);
+        remoteControl.onButtonWasPushed(speed);
         remoteControl.undoButtonWasPushed();
     }
 
@@ -81,12 +120,15 @@ public class RemoteControlWithUndoTest {
     public void ampTest() {
         remoteControl.setCommand(0, ampOn, ampOff);
         remoteControl.onButtonWasPushed(0);
-        remoteControl.offButtonWasPushed(0);
-        System.out.println(remoteControl);
+        remoteControl.onButtonWasPushed(0);
         remoteControl.undoButtonWasPushed();
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+
         remoteControl.offButtonWasPushed(0);
         remoteControl.onButtonWasPushed(0);
-        System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
     }
 

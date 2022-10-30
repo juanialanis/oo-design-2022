@@ -20,15 +20,10 @@ public class Amplifier {
 		System.out.println(location + " amp is off");
 	}
 
-	public void mute() {
-		volume = 0;
-		System.out.println(location + " amp is muted");
-	}
-
 	public void setVolume(int volume) {
 		this.volume = volume;
 		if (volume == 0) {
-			mute();
+			off();
 		} else {
 			System.out.println("Volume is set to " + volume + "%");
 		}
