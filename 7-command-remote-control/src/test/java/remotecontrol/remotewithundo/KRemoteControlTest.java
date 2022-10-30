@@ -34,6 +34,12 @@ public class KRemoteControlTest {
         remote.undoButtonWasPushed();
         remote.undoButtonWasPushed();
 
+        remote.onButtonWasPushed(0);
+        remote.offButtonWasPushed(0);
+
+        remote.undoButtonWasPushed();
+        remote.undoButtonWasPushed();
+
         remote.redoButtonWasPushed();
         remote.redoButtonWasPushed();
         remote.redoButtonWasPushed();
