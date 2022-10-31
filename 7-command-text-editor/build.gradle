@@ -24,6 +24,13 @@ dependencies {
     testImplementation('org.easymock:easymock:4.3')
 }
 
+task runEditor(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'texteditor.TextEditorTest'
+}
+
+
 test {
     useJUnitPlatform {
         testLogging {
