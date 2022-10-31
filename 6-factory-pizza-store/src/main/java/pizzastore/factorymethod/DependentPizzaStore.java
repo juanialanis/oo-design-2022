@@ -24,6 +24,14 @@ public class DependentPizzaStore {
 			} else if (type.equals("pepperoni")) {
 				pizza = new ChicagoStylePepperoniPizza();
 			}
+		} else if (style.equals("Argentine")) {
+			if (type.equals("especial")) {
+				pizza = new ArgentineStyleEspecialPizza();
+			} else if (type.equals("fugazzetta")) {
+				pizza = new ArgentineStyleFugazzettaPizza();
+			} else if (type.equals("muzza")) {
+				pizza = new ArgentineStyleMuzzaPizza();
+			}	
 		} else {
 			System.out.println("Error: invalid type of pizza");
 			return null;
