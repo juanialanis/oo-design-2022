@@ -27,6 +27,7 @@ dependencies {
 task runEditor(type: JavaExec) {
     group = "Execution"
     classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
     main = 'texteditor.TextEditorTest'
 }
 

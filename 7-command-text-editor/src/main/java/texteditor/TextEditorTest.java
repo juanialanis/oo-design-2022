@@ -6,17 +6,17 @@ public class TextEditorTest {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
+		TextEditor textEditor = new TextEditor(10);
+		Text text = new Text();
+		int line, index, option;
+		String sentence, word;
 		while (true) {
 
 			System.out.println("\n******Menu Options******");
 			System.out.println("\n0-Exit 1-Add Line  2-Delete Line   3-Show Text    4-Add word to a Line    5-Delete word from a Line   6-Undo   7-Redo");
 	
-			int option = Integer.parseInt(scanner.nextLine());
+			option = Integer.parseInt(scanner.nextLine());
 			
-			Text text = new Text();
-			TextEditor textEditor = new TextEditor(10);
-			int line, index;
-			String sentence, word;
 			switch(option) {
 				case 1:
 					System.out.println("\n******Adding a Line******");
