@@ -5,16 +5,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class AttackDataDisplayInFile implements Observer, DisplayElement {
+public class AttackDataDisplayInFile extends DisplayElement implements Observer {
   private int damageReceived;
   private String playerAttackType;
   private String playerReceivesAttackType;
-  private GameData gameData;
-
-  public void setGameData(GameData gameData) {
-    this.gameData = gameData;
-  }
-
+  
   public AttackDataDisplayInFile() {
     try {
       if (!Files.exists(Paths.get("fight-output.txt"))) {

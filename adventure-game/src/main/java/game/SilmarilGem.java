@@ -9,9 +9,7 @@ public class SilmarilGem extends GemDecorator {
     }
 
     public int getDamage() {
-
         int current = this.getCurrentGems();
-        System.out.println("current " + current);
         if (current > weapon.getGemLimit()) {
             return weapon.getDamage();
         }

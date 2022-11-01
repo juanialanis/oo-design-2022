@@ -12,17 +12,13 @@ import com.opencsv.CSVWriter;
 import com.opencsv.CSVReader;
 import java.util.List;
 
-public class FightStatistics implements Observer, DisplayElement {
+public class FightStatistics extends DisplayElement implements Observer {
   private String winnerCharType;
   private String winnerWeapon;
   private String losserCharType;
   private String looserWeapon;
-  private GameData gameData;
   List<List<String>> records;
 
-  public void setGameData(GameData gameData) {
-    this.gameData = gameData;
-  }
 
   public FightStatistics() {
     try {

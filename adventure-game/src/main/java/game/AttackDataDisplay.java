@@ -1,14 +1,10 @@
 package game;
 
-public class AttackDataDisplay implements Observer, DisplayElement {
+public class AttackDataDisplay extends DisplayElement implements Observer {
   private int damageReceived;
   private String playerAttackType;
   private String playerReceivesAttackType;
-  private GameData gameData;
-
-  public void setGameData(GameData gameData) {
-    this.gameData = gameData;
-  }
+  
 
   public void updateAttackData() {
     this.damageReceived = gameData.getAttackerWeaponDamage();

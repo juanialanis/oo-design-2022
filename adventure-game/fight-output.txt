@@ -1,0 +1,285 @@
+
+
+
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 20 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Knight wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 30 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 30 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Wizard and does 20 points of damage. 
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Wizard has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+
+
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight attacks the class game.Elf and does 20 points of damage. 
+The class game.Elf attacks the class game.Knight and does 30 points of damage. 
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------
+The class game.Knight has died. 
+The battle has ended. The player class game.Elf wins 
+--------------------------------------------------------------------------------------

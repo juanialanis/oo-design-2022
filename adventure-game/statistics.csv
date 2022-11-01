@@ -1,0 +1,8 @@
+"2","class game.Knight","class game.Mace","0","class game.Wizard","class game.Mace"
+"2","class game.Knight","class game.Wand","0","class game.Wizard","class game.Wand"
+"2","class game.Elf","class game.Wand","0","class game.Knight","class game.Wand"
+"2","class game.Elf","class game.Mace","0","class game.Wizard","class game.Wand"
+"2","class game.Elf","class game.Wand","0","class game.Wizard","class game.Mace"
+"2","class game.Elf","class game.Mace","0","class game.Wizard","class game.Mace"
+"2","class game.Elf","class game.Wand","0","class game.Knight","class game.Mace"
+"1","class game.Elf","class game.Mace","0","class game.Knight","class game.Mace"

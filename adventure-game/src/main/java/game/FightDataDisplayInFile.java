@@ -5,13 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class FightDataDisplayInFile implements Observer, DisplayElement {
+public class FightDataDisplayInFile extends DisplayElement implements Observer {
   private String playerAttackType;
-  private GameData gameData;
-
-  public void setGameData(GameData gameData) {
-    this.gameData = gameData;
-  }
 
   public FightDataDisplayInFile() {
     try {
