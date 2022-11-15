@@ -20,10 +20,23 @@ public class Waitress {
 		while (iterator.hasNext()) {
 			MenuComponent menuComponent = iterator.next();
 			try {
-				if (menuComponent.isVegetarian()) {
+				if (menuComponent.includeAttribute("vegetarian")) {
 					menuComponent.print();
 				}
 			} catch (UnsupportedOperationException e) {}
 		}
 	}
+
+  public void printDinnerMenu(){
+		Iterator<MenuComponent> iterator = allMenus.createIterator();
+    System.out.println("DINNER MENU");
+		while (iterator.hasNext()) {
+			MenuComponent menuComponent = iterator.next();
+			try {
+				if (menuComponent.includeAttribute("dinner")) {
+					menuComponent.print();
+				}
+			} catch (UnsupportedOperationException e) {}
+		}
+  }
 }

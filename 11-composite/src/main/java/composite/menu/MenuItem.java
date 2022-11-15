@@ -1,22 +1,24 @@
 package composite.menu;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Iterator;
 
 public class MenuItem extends MenuComponent {
  
 	String name;
 	String description;
-	boolean vegetarian;
+	List<String> attributes;
 	double price;
     
 	public MenuItem(String name, 
 	                String description, 
-	                boolean vegetarian, 
+	                String[] attributes, 
 	                double price) 
 	{ 
 		this.name = name;
 		this.description = description;
-		this.vegetarian = vegetarian;
+		this.attributes = Arrays.asList(attributes);
 		this.price = price;
 	}
   
@@ -32,17 +34,22 @@ public class MenuItem extends MenuComponent {
 		return price;
 	}
   
-	public boolean isVegetarian() {
-		return vegetarian;
+	public String[] getAttributes() {
+		String[] result = (String[]) attributes.toArray();
+    return result;
 	}
 
 	public Iterator<MenuComponent> createIterator() {
 		return new NullIterator();
 	}
+
+  public boolean includeAttribute(String attributeName){
+    return attributes.contains(attributeName);
+  }
  
 	public void print() {
 		System.out.print("  " + getName());
-		if (isVegetarian()) {
+		if (includeAttribute("vegetarian")){
 			System.out.print("(v)");
 		}
 		System.out.println(", " + getPrice());

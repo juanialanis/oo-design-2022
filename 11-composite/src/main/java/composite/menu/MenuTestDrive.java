@@ -11,64 +11,69 @@ public class MenuTestDrive {
 			new Menu("CAFE MENU", "Dinner");
 		MenuComponent dessertMenu = 
 			new Menu("DESSERT MENU", "Dessert of course!");
-  
+    MenuComponent cakesMenu = 
+			new Menu("CAKES MENU", "Cakes");
+    MenuComponent breakfastMenu = 
+			new Menu("BREAKFAST MENU", "Coffe and cakes!");
 		MenuComponent allMenus = new Menu("ALL MENUS", "All menus combined");
   
 		allMenus.add(pancakeHouseMenu);
 		allMenus.add(dinerMenu);
-		allMenus.add(cafeMenu);
+		allMenus.add(breakfastMenu);
+    breakfastMenu.add(cakesMenu);
+    breakfastMenu.add(cafeMenu);
   
 		pancakeHouseMenu.add(new MenuItem(
 			"K&B's Pancake Breakfast", 
 			"Pancakes with scrambled eggs and toast", 
-			true,
+			new String[]{"vegetarian", "breakfast", "pancake"},
 			2.99));
 		pancakeHouseMenu.add(new MenuItem(
 			"Regular Pancake Breakfast", 
 			"Pancakes with fried eggs, sausage", 
-			false,
+			new String[]{"vegetarian", "breakfast", "pancake"},
 			2.99));
 		pancakeHouseMenu.add(new MenuItem(
 			"Blueberry Pancakes",
 			"Pancakes made with fresh blueberries and blueberry syrup",
-			true,
+			new String[]{"vegetarian", "breakfast", "pancake"},
 			3.49));
 		pancakeHouseMenu.add(new MenuItem(
 			"Waffles",
 			"Waffles with your choice of blueberries or strawberries",
-			true,
+			new String[]{"vegetarian", "breakfast", "pancake"},
 			3.59));
 
 		dinerMenu.add(new MenuItem(
 			"Vegetarian BLT",
 			"(Fakin') Bacon with lettuce & tomato on whole wheat", 
-			true, 
+			new String[]{"vegetarian", "dinner"},
 			2.99));
 		dinerMenu.add(new MenuItem(
 			"BLT",
 			"Bacon with lettuce & tomato on whole wheat", 
-			false, 
+			new String[]{"dinner"},
 			2.99));
 		dinerMenu.add(new MenuItem(
 			"Soup of the day",
 			"A bowl of the soup of the day, with a side of potato salad", 
-			false, 
+			new String[]{"dinner"},
 			3.29));
 		dinerMenu.add(new MenuItem(
 			"Hot Dog",
 			"A hot dog, with saurkraut, relish, onions, topped with cheese",
-			false, 
+			new String[]{"dinner"},
 			3.05));
 		dinerMenu.add(new MenuItem(
 			"Steamed Veggies and Brown Rice",
 			"A medly of steamed vegetables over brown rice", 
-			true, 
+			new String[]{"dinner"},
 			3.99));
  
 		dinerMenu.add(new MenuItem(
 			"Pasta",
 			"Spaghetti with marinara sauce, and a slice of sourdough bread",
-			true, 
+			new String[]{"dinner"},
 			3.89));
    
 		dinerMenu.add(dessertMenu);
@@ -76,39 +81,49 @@ public class MenuTestDrive {
 		dessertMenu.add(new MenuItem(
 			"Apple Pie",
 			"Apple pie with a flakey crust, topped with vanilla icecream",
-			true,
+			new String[]{"dessert"},
 			1.59));
 		dessertMenu.add(new MenuItem(
 			"Cheesecake",
 			"Creamy New York cheesecake, with a chocolate graham crust",
-			true,
+			new String[]{"dessert"},
 			1.99));
 		dessertMenu.add(new MenuItem(
 			"Sorbet",
 			"A scoop of raspberry and a scoop of lime",
-			true,
+			new String[]{"dessert"},
 			1.89));
 
 		cafeMenu.add(new MenuItem(
 			"Veggie Burger and Air Fries",
 			"Veggie burger on a whole wheat bun, lettuce, tomato, and fries",
-			true, 
+			new String[]{"coffee"},
 			3.99));
 		cafeMenu.add(new MenuItem(
 			"Soup of the day",
 			"A cup of the soup of the day, with a side salad",
-			false, 
+			new String[]{"coffee"},
 			3.69));
 		cafeMenu.add(new MenuItem(
 			"Burrito",
 			"A large burrito, with whole pinto beans, salsa, guacamole",
-			true, 
+			new String[]{"coffee"},
 			4.29));
- 
+    cakesMenu.add(new MenuItem(
+      "Chocotorta",
+      "A cake with chocolinas and cream of dulce de leche and milk cream",
+      new String[]{"cake", "vegetarian"},
+      1));
+    cakesMenu.add(new MenuItem(
+      "Cheesecake",
+      "A cake with cheese and slim dough and red berries jelly",
+      new String[]{"cake", "vegetarian"},
+      1));
 		Waitress waitress = new Waitress(allMenus);
    
-		waitress.printVegetarianMenu();
-		//waitress.printMenu();
+		// waitress.printVegetarianMenu();
+		// waitress.printMenu();
+		waitress.printDinnerMenu();
  
 	}
 }

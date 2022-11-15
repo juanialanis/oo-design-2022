@@ -23,9 +23,13 @@ public abstract class MenuComponent {
 	public double getPrice() {
 		throw new UnsupportedOperationException();
 	}
-	public boolean isVegetarian() {
+	public String[] getAttributes() {
 		throw new UnsupportedOperationException();
 	}
+
+  public boolean includeAttribute(String attribute){
+		throw new UnsupportedOperationException();
+  }
 
 	public abstract Iterator<MenuComponent> createIterator();
  
