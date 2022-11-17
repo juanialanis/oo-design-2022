@@ -10,7 +10,7 @@ public class CoffeeFactory {
             return new Decaf();
         } else if (beverage.equals("Espresso")) {
             return new Espresso();
-        } else if (beverage.equals("HouseBlend")) {
+        } else if (beverage.equals("House Blend")) {
             return new HouseBlend();
         }
 

@@ -18,6 +18,17 @@ public class CoffeeMachineTestDrive {
         // condiments
 
         System.out.println(machine);
-    }
 
+        machine.insertQuarters(2);
+        machine.pressCoffeeButton("House Blend");
+        machine.pressCondimentButton("Scotch");
+        machine.pressDispenseButton();
+
+        System.out.println(machine);
+
+        machine.insertQuarters(1);
+        machine.pressCoffeeButton("Decaf");
+        machine.pressCondimentButton("Soy");
+        machine.pressDispenseButton();
+    }
 }

@@ -68,7 +68,7 @@ public class GumballMachine {
 
     void refill(int count) {
         this.count += count;
-        System.out.println("The gumball machine was just refilled; its new count is: " + this.count);
+        System.out.println("the gumball machine was just refilled; its new count is: " + this.count);
         state.refill();
     }
 
