@@ -2,16 +2,18 @@ package state.gumballmachine;
 
 import java.util.Random;
 
-public class HasQuarterState extends State {
+public class HasNQuartersState extends State {
 	Random randomWinner = new Random(System.currentTimeMillis());
 	GumballMachine gumballMachine;
+	int quarters;
 
-	public HasQuarterState(GumballMachine gumballMachine) {
+	public HasNQuartersState(GumballMachine gumballMachine, int quarters) {
 		this.gumballMachine = gumballMachine;
+		this.quarters = quarters;
 	}
 
 	public void ejectQuarter() {
-		System.out.println("Quarter returned");
+		System.out.println(quarters + "quarters returned");
 		gumballMachine.setState(new NoQuarterState(gumballMachine));
 	}
 
@@ -19,9 +21,9 @@ public class HasQuarterState extends State {
 		System.out.println("You turned...");
 		int winner = randomWinner.nextInt(10);
 		if ((winner == 0) && (gumballMachine.getCount() > 1)) {
-			gumballMachine.setState(new WinnerState(gumballMachine));
+			gumballMachine.setState(new NWinnerState(gumballMachine, quarters));
 		} else {
-			gumballMachine.setState(new SoldState(gumballMachine));
+			gumballMachine.setState(new NSoldState(gumballMachine, quarters));
 		}
 	}
 

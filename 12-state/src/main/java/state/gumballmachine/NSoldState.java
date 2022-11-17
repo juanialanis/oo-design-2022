@@ -1,14 +1,20 @@
 package state.gumballmachine;
 
-public class SoldState extends State {
+public class NSoldState extends State {
 	GumballMachine gumballMachine;
+	int quarters;
 
-	public SoldState(GumballMachine gumballMachine) {
+	public NSoldState(GumballMachine gumballMachine, int quarters) {
 		this.gumballMachine = gumballMachine;
+		this.quarters = quarters;
 	}
 
 	public void dispense() {
-		gumballMachine.releaseBall();
+		do {
+			quarters--;
+			gumballMachine.releaseBall();
+		} while (gumballMachine.getCount() > 0 && quarters > 0);
+
 		if (gumballMachine.getCount() > 0) {
 			gumballMachine.setState(new NoQuarterState(gumballMachine));
 		} else {

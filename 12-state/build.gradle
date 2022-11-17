@@ -16,6 +16,12 @@ repositories {
 	mavenCentral()
 }
 
+task run(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'state.gumballmachine.GumballMachineTestDrive'
+}
+
 dependencies {
 	testImplementation(platform('org.junit:junit-bom:5.8.2'))
 	testImplementation('org.junit.jupiter:junit-jupiter')
