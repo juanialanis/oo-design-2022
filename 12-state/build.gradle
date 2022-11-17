@@ -19,7 +19,7 @@ repositories {
 task run(type: JavaExec) {
     group = "Execution"
     classpath = sourceSets.main.runtimeClasspath
-    main = 'state.gumballmachine.GumballMachineTestDrive'
+    main = 'state.coffeemachine.CoffeeMachineTestDrive'
 }
 
 dependencies {
