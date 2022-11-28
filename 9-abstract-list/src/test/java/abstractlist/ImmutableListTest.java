@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 
 import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
 
 public class ImmutableListTest {
   static ImmutableList<Object> list;
@@ -21,6 +23,12 @@ public class ImmutableListTest {
   static Stream<Arguments> positionAndObject() {
     return Stream.of(Arguments.of(0, 1), Arguments.of(1, 2), Arguments.of(2, "asd"), Arguments.of(3, "test"),
         Arguments.of(0, 1));
+  }
+
+  static Stream<Arguments> sublistGenerator() {
+    return Stream.of(Arguments.of(0, 2, Arrays.asList(new Object[] { 1, 2 })),
+        Arguments.of(1, 3, Arrays.asList(new Object[] { 2, "asd" })),
+        Arguments.of(2, 4, Arrays.asList(new Object[] { "asd", "test" })));
   }
 
   @ParameterizedTest
@@ -46,9 +54,8 @@ public class ImmutableListTest {
   }
 
   @ParameterizedTest
-  @MethodSource("lastIndexAndObject")
-  public void getLastIndexTest(int position, Object element) {
-    System.out.println(list.lastIndexOf(element));
-    assertEquals(list.lastIndexOf(element), position);
+  @MethodSource("sublistGenerator")
+  public void sublistTest(int start, int end, List<Object> sublist) {
+    assertEquals(list.subList(start, end), sublist);
   }
 }
