@@ -1,29 +1,39 @@
 package waitress;
 
+import java.util.Iterator;
 import java.util.List;
  
 public class Waitress {
-	Menu pancakeHouseMenu;
-	Menu dinerMenu;
- 
-	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
-		this.pancakeHouseMenu = pancakeHouseMenu;
-		this.dinerMenu = dinerMenu;
+	List<Menu> allMenu;
+
+	public Waitress(List<Menu> allMenu) {
+		this.allMenu = allMenu;
 	}
 	
 	// implicit iteration
 	public void printMenu() {
-		List<MenuItem> breakfastItems = ((PancakeHouseMenu) pancakeHouseMenu).getMenuItems();
-		for (MenuItem m : breakfastItems) {
-			printMenuItem(m);
-		}
-		
-		MenuItem[] lunchItems = ((DinerMenu) dinerMenu).getMenuItems();
-		for (MenuItem m : lunchItems) {
-			printMenuItem(m);
+
+		for (Menu menu : allMenu) {
+			Iterator<MenuItem> items = menu.createIterator();
+			while (items.hasNext()){
+				printMenuItem(items.next());
+			}
+			System.out.println();
 		}
 	}
 	
+
+	public void deleteLastItemOfMenus() {
+
+		for (Menu menu : allMenu) {
+			Iterator<MenuItem> items = menu.createIterator();
+			while (items.hasNext()){
+				items.next();
+			}
+			items.remove();
+		}
+	}
+
 	public void printMenuItem(MenuItem menuItem) {
 		System.out.print(menuItem.getName() + ", ");
 		System.out.print(menuItem.getPrice() + " -- ");

@@ -2,9 +2,9 @@ package facade.bandpractice;
 
 public class BandPracticeGarageFacade {
 
-       Amplifier amp;
-       Light lights;
-       CeilingFan fan;
+       private Amplifier amp;
+       private Light lights;
+       private CeilingFan fan;
 
        public BandPracticeGarageFacade(Amplifier amp, Light lights, CeilingFan fan) {
               this.amp = amp;
@@ -25,5 +25,17 @@ public class BandPracticeGarageFacade {
               amp.off();
               fan.off();
               lights.off();
+       }
+
+       public Amplifier getAmp() {
+              return this.amp;
+       }
+
+       public Light getLight() {
+              return this.lights;
+       }
+
+       public CeilingFan getFan() {
+              return this.fan;
        }
 }
