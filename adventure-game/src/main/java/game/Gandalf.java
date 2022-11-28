@@ -7,6 +7,3 @@ public class Gandalf extends Character {
     this.setWeapon(new SilmarilGem(new Wand()));
   }
 }
-
-// new
-// CharacterFactory().withCharacter("Wizard").withWeapon("Wand").withGem("Diamond");
