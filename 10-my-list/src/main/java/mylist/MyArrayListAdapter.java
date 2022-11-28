@@ -4,11 +4,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class CircularBufferAdapter<E> implements List<E> {
+public class MyArrayListAdapter<E> implements List<E> {
 
   MyArrayList<E> myArrayList;
 
-  public CircularBufferAdapter() {
+  public MyArrayListAdapter() {
     myArrayList = new MyArrayList<E>();
   }
 

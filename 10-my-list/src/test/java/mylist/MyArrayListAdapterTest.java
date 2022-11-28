@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class MyArrayListAdapterTest {
 
-    CircularBufferAdapter list;
+    MyArrayListAdapter list;
 
     @BeforeEach
     public void setUp() {
-        list = new CircularBufferAdapter<Integer>();
+        list = new MyArrayListAdapter<Integer>();
     }
 
     @Test
