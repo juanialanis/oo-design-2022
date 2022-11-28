@@ -86,6 +86,15 @@ class CircularBuffer<E> implements MyList<E>{
   }
 
   @Override
+  public boolean insertAll(CircularBuffer<E> e) {
+    for (E element : e) {
+        this.add(element);
+    }
+    return false;
+  }
+
+
+  @Override
   public Iterator<E> iterator() {
     return new Iterator<E>() {
       private int pos=0;

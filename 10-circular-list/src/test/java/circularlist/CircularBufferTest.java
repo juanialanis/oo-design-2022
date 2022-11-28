@@ -2,6 +2,8 @@ package circularlist;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -125,5 +127,24 @@ public class CircularBufferTest {
         assertThat(list.getLastIndex()).isEqualTo(1);
         
     }
+
+    @Test
+    public void insertAllTest() {
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        CircularBuffer list2 = new CircularBuffer<Integer>();
+        list2.add(6);
+        list2.add(7);
+        list2.add(8);
+        list.insertAll(list2);
+
+        assertThat(list.size()).isEqualTo(8);
+        
+    }
+
 
 }
