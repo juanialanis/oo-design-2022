@@ -1,30 +1,22 @@
 package facade.primesnumber;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.params.ParameterizedTest;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 public class CalculatorTest {
 
     static Stream<Arguments> primesCalculatorGenerator() {
-        return Stream.of(
-                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 3),
-                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 5),
-                         Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 10),
-                         Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 15),
-                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 20),
-                         Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 25),
-                         Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 30),
-                         Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 35)
-                         );
+        return Stream.of(Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 3),
+                Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 5),
+                Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 10),
+                Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 15),
+                Arguments.of(new CalculatorEratosthenes(), new ShowResultsPrint(), 20),
+                Arguments.of(new CalculatorEratosthenes(), new ShowResultsFile(), 25),
+                Arguments.of(new CalculatorCheckEach(), new ShowResultsPrint(), 30),
+                Arguments.of(new CalculatorCheckEach(), new ShowResultsFile(), 35));
     }
 
     @ParameterizedTest
@@ -35,10 +27,8 @@ public class CalculatorTest {
     }
 
     static Stream<Arguments> changeCalculatorBehaviorGenerator() {
-        return Stream.of(
-                         Arguments.of(new CalculatorEratosthenes(), new CalculatorCheckEach() , 3),
-                         Arguments.of(new CalculatorCheckEach(), new CalculatorEratosthenes(), 10)
-                         );
+        return Stream.of(Arguments.of(new CalculatorEratosthenes(), new CalculatorCheckEach(), 3),
+                Arguments.of(new CalculatorCheckEach(), new CalculatorEratosthenes(), 10));
     }
 
     @ParameterizedTest
@@ -50,10 +40,8 @@ public class CalculatorTest {
     }
 
     static Stream<Arguments> changeShowResultsBehaviorGenerator() {
-        return Stream.of(
-                         Arguments.of(new ShowResultsPrint(), new ShowResultsFile() , 3),
-                         Arguments.of(new ShowResultsFile(), new ShowResultsPrint(), 10)
-                         );
+        return Stream.of(Arguments.of(new ShowResultsPrint(), new ShowResultsFile(), 3),
+                Arguments.of(new ShowResultsFile(), new ShowResultsPrint(), 10));
     }
 
     @ParameterizedTest
@@ -65,27 +53,21 @@ public class CalculatorTest {
     }
 
     static Stream<Arguments> calculatorNumbers() {
-      return Stream.of(
-                       Arguments.of(3),
-                       Arguments.of(10),
-                       Arguments.of(15),
-                       Arguments.of(20),
-                       Arguments.of(25),
-                       Arguments.of(30)
-                       );
-  }
-
-    @ParameterizedTest
-    @MethodSource("calculatorNumbers")
-    public void casioCalcutorTest(int n){
-      Calculator casio = new CasioCalculator(n);
-      casio.performCalculate();
+        return Stream.of(Arguments.of(3), Arguments.of(10), Arguments.of(15), Arguments.of(20), Arguments.of(25),
+                Arguments.of(30));
     }
 
     @ParameterizedTest
     @MethodSource("calculatorNumbers")
-    public void tiCalcutorTest(int n){
-      Calculator ti = new TICalculator(n);
-      ti.performCalculate();
+    public void casioCalcutorTest(int n) {
+        Calculator casio = new CasioCalculator(n);
+        casio.performCalculate();
+    }
+
+    @ParameterizedTest
+    @MethodSource("calculatorNumbers")
+    public void tiCalcutorTest(int n) {
+        Calculator ti = new TICalculator(n);
+        ti.performCalculate();
     }
 }
