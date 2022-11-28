@@ -18,7 +18,7 @@ public class GumballMachine {
             state.insertQuarter();
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
     }
 
@@ -27,7 +27,7 @@ public class GumballMachine {
             state.insertQuarter(n);
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
     }
 
@@ -36,7 +36,7 @@ public class GumballMachine {
             state.ejectQuarter();
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
 
     }
@@ -47,7 +47,7 @@ public class GumballMachine {
             state.dispense();
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
     }
 

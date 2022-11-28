@@ -18,7 +18,7 @@ public class CoffeeMachine {
             state.insertQuarters(n);
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
     }
 
@@ -27,7 +27,7 @@ public class CoffeeMachine {
             state.pressCoffeeButton(coffee);
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
+
         }
     }
 
@@ -36,7 +36,6 @@ public class CoffeeMachine {
             state.pressCondimentButton(condiment);
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
         }
     }
 
@@ -46,7 +45,6 @@ public class CoffeeMachine {
             state.dispense();
         } catch (UnsupportedOperationException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
         }
     }
 
