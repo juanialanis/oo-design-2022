@@ -8,25 +8,26 @@
 
 plugins {
 	id 'java'
-	//id 'eclipse' // optional (to generate Eclipse project files)
-	id 'idea' // optional (to generate IntelliJ IDEA project files)
-}
-
-task run(type: JavaExec) {
-    group = "Execution"
-    classpath = sourceSets.main.runtimeClasspath
-    // main = 'barista.BeverageTestDrive'
+	id 'eclipse' // optional (to generate Eclipse project files)
+	//id 'idea' // optional (to generate IntelliJ IDEA project files)
+    id 'jacoco'
 }
 
 repositories {
 	mavenCentral()
 }
 
+task run(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    // main = 'calculator.CalculatorSimulator'
+}
+
 dependencies {
 	testImplementation(platform('org.junit:junit-bom:5.8.2'))
-	testImplementation('org.junit.jupiter:junit-jupiter')
-	testImplementation('org.assertj:assertj-core:3.6.1')
-	testImplementation('org.easymock:easymock:4.3')
+	testImplementation group: 'org.easymock', name: 'easymock', version: '3.1'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
 test {
@@ -37,3 +38,24 @@ test {
 	}
 }
 
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+// Make build fail if tests don't cover enough code
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'BRANCH'
+                minimum = 0.8
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification

@@ -2,16 +2,16 @@ package abstractlist;
 
 import java.util.AbstractList;
 
-public class ImmutableList<E> extends AbstractList {
+public class ImmutableList<E> extends AbstractList<E> {
 
-  private final Object[] array;
+  private final E[] array;
 
-  public ImmutableList(Object[] array){
+  public ImmutableList(E[] array){
     this.array = array;
   }
 
   public E get(int index){
-    return (E) array[index];
+    return array[index];
   }
 
   public int size(){
