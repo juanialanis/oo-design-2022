@@ -18,4 +18,6 @@ public interface MyList<E> extends Iterable<E> {
   
   public int getFirstIndex();
 
+  public boolean insertAll(CircularBuffer<E> e);
+
 }
