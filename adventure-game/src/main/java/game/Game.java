@@ -76,5 +76,4 @@ public abstract class Game {
     Weapon w = createWeapon(type);
     this.setWeaponToPlayerTwo(w);
   }
-
 }
