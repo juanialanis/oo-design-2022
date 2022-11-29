@@ -1,7 +1,5 @@
 package circularlist;
 
-import java.util.Collection;
-
 public interface MyList<E> extends Iterable<E> {
 
   public E delete();
@@ -15,7 +13,7 @@ public interface MyList<E> extends Iterable<E> {
   public boolean isEmpty();
 
   public int getLastIndex();
-  
+
   public int getFirstIndex();
 
   public boolean insertAll(CircularBuffer<E> e);

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class CircularBufferTest {
 
-    CircularBuffer list;
+    CircularBuffer<Integer> list;
 
     @BeforeEach
     public void setUp() {
@@ -40,8 +40,10 @@ public class CircularBufferTest {
         list.add(8);
         list.add(9);
         list.add(10);
-        
-        assertThatThrownBy(() -> {list.add(11);}).isInstanceOf(IndexOutOfBoundsException.class);
+
+        assertThatThrownBy(() -> {
+            list.add(11);
+        }).isInstanceOf(IndexOutOfBoundsException.class);
     }
 
     @Test
@@ -55,7 +57,9 @@ public class CircularBufferTest {
 
     @Test
     public void deleteOutOfBoundsTest() {
-        assertThatThrownBy(() -> {list.delete();}).isInstanceOf(IllegalStateException.class);
+        assertThatThrownBy(() -> {
+            list.delete();
+        }).isInstanceOf(IllegalStateException.class);
     }
 
     @Test
@@ -67,7 +71,9 @@ public class CircularBufferTest {
 
     @Test
     public void getIllegalStateTest() {
-        assertThatThrownBy(() -> {list.get();}).isInstanceOf(IllegalStateException.class);
+        assertThatThrownBy(() -> {
+            list.get();
+        }).isInstanceOf(IllegalStateException.class);
     }
 
     @Test
@@ -87,7 +93,9 @@ public class CircularBufferTest {
         list.add(1);
         list.add(2);
         assertThat(list.iterator().hasNext()).isEqualTo(true);
-        assertThatThrownBy(() -> {list.iterator().remove();}).isInstanceOf(UnsupportedOperationException.class);
+        assertThatThrownBy(() -> {
+            list.iterator().remove();
+        }).isInstanceOf(UnsupportedOperationException.class);
     }
 
     @Test
@@ -120,7 +128,7 @@ public class CircularBufferTest {
 
         assertThat(list.getFirstIndex()).isEqualTo(2);
         assertThat(list.getLastIndex()).isEqualTo(1);
-        
+
     }
 
     @Test
@@ -131,15 +139,12 @@ public class CircularBufferTest {
         list.add(4);
         list.add(5);
 
-        CircularBuffer list2 = new CircularBuffer<Integer>();
+        CircularBuffer<Integer> list2 = new CircularBuffer<Integer>();
         list2.add(6);
         list2.add(7);
         list2.add(8);
         list.insertAll(list2);
 
         assertThat(list.size()).isEqualTo(8);
-        
     }
-
-
 }

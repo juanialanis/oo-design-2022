@@ -3,50 +3,50 @@ package composite.staff;
 import java.util.Iterator;
   
 public class CompanyStaff {
-	DeveloperComponent developers;
+    DeveloperComponent developers;
  
-	public CompanyStaff(DeveloperComponent developers) {
-		this.developers = developers;
-	}
+    public CompanyStaff(DeveloperComponent developers) {
+        this.developers = developers;
+    }
  
-	public void printStaff() {
-		developers.print();
-	}
+    public void printStaff() {
+        developers.print();
+    }
   
-	public void printAllDevelopers() {
-		Iterator<DeveloperComponent> iterator = developers.createIterator();
+    public void printAllDevelopers() {
+        Iterator<DeveloperComponent> iterator = developers.createIterator();
 
-		System.out.println("\n ALL DEVELOPERS STAFF\n----");
-		while (iterator.hasNext()) {
-			DeveloperComponent developerComponent = iterator.next();
-			try {
+        System.out.println("\n ALL DEVELOPERS STAFF\n----");
+        while (iterator.hasNext()) {
+            DeveloperComponent developerComponent = iterator.next();
+            try {
         developerComponent.print();
-				
-			} catch (UnsupportedOperationException e) {}
-		}
-	}
+
+            } catch (UnsupportedOperationException e) {}
+        }
+    }
 
   public boolean existPerson(String name) {
-		Iterator<DeveloperComponent> iterator = developers.createIterator();
+        Iterator<DeveloperComponent> iterator = developers.createIterator();
 
-		while (iterator.hasNext()) {
-			DeveloperComponent developerComponent = iterator.next();
-			try {
+        while (iterator.hasNext()) {
+            DeveloperComponent developerComponent = iterator.next();
+            try {
         if(developerComponent.getName().equals(name)){
           return true;
         }
-				
-			} catch (UnsupportedOperationException e) {}
-		}
+
+            } catch (UnsupportedOperationException e) {}
+        }
     return false;
-	}
+    }
 
   public boolean existDependency(String depends, String of) {
-		Iterator<DeveloperComponent> iterator = developers.createIterator();
+        Iterator<DeveloperComponent> iterator = developers.createIterator();
 
-		while (iterator.hasNext()) {
-			DeveloperComponent developerComponent = iterator.next();
-			try {
+        while (iterator.hasNext()) {
+            DeveloperComponent developerComponent = iterator.next();
+            try {
         if(developerComponent.getName().equals(of)){
           Iterator<DeveloperComponent> substaff = developerComponent.createIterator();
           while (substaff.hasNext()) {
@@ -60,10 +60,10 @@ public class CompanyStaff {
           }
           return false;
         }
-				
-			} catch (UnsupportedOperationException e) {}
-		}
+
+            } catch (UnsupportedOperationException e) {}
+        }
     return false;
-	}
+    }
 
 }

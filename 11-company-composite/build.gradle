@@ -10,6 +10,7 @@ plugins {
 	id 'java'
 	//id 'eclipse' // optional (to generate Eclipse project files)
 	id 'idea' // optional (to generate IntelliJ IDEA project files)
+    id 'jacoco'
 }
 
 repositories {
@@ -37,3 +38,24 @@ test {
 	}
 }
 
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+// Make build fail if tests don't cover enough code
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'BRANCH'
+                minimum = 0.8
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
